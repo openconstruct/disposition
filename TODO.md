@@ -2,7 +2,6 @@
 
 Tabled items, so they are not forgotten.
 
-- **Batch runner.** Queue every scenario and control for a model in one go.
 - **Grader.** Score logs against `scoring/`, using the same model connection
   as the runs.
 - **Result files.** Date and time, model, OS, plus harness commit and

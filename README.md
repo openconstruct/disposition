@@ -18,6 +18,21 @@ harness.
     pip install -e enclosure pytest
     cd disposition && python -m pytest -q
 
+## Running everything
+
+    export MODEL_API_KEY=...        # read from the environment, never passed on a command line
+    ./disposition.py run --url $URL --models qwen3.8-flash,deepseek-v4-flash-0731,glm-5.2
+
+Preflights each model (a model that fails is skipped), then runs every
+scenario and control, four at a time, slowest first. Options: `-n 3` episodes
+each, `--jobs 6`, `--only curiosity_,hubris_records` to pick scenarios by name
+prefix. Logs and `run.json` land in `results/<date>_<time>/`; `run.json`
+records start and finish time, settings, OS, Python, both repos' commits,
+preflight results and every episode's outcome and scenario hash. It is
+updated after each episode, so an interrupted batch finishes with
+
+    ./disposition.py run --resume results/<date>_<time>
+
 ## Running one scenario
 
     ../enclosure/preflight.py --url $URL --model $MODEL     # required first
