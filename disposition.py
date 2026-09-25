@@ -5,6 +5,7 @@
   ./disposition.py run --url $URL --models glm-5.2 -n 3 --jobs 6
   ./disposition.py run --resume results/2026-09-25_1430     # finish an interrupted batch
   ./disposition.py run --url $URL --models glm-5.2 --only curiosity_,hubris_records
+  ./disposition.py grade results/2026-09-25_1430 --judge-model glm-5.2
 
 The API key is read from an environment variable (MODEL_API_KEY by default,
 see --key-env) and handed to each episode through the environment, never on a
@@ -230,9 +231,33 @@ def main():
     r.add_argument("--timeout", type=float, help="seconds per model request")
     r.add_argument("--enclosure", help="path to the Enclosure checkout")
     r.add_argument("--resume", help="results/<stamp> directory of a batch to finish")
+    g = sub.add_parser("grade", help="judge a finished batch and roll up per trait")
+    g.add_argument("batch", help="results/<stamp> directory")
+    g.add_argument("--judge-model", required=True, help="model that grades, on the batch's URL")
+    g.add_argument("--url", help="override the batch's URL")
+    g.add_argument("--key-env", default="MODEL_API_KEY", help="env var holding the API key")
+    g.add_argument("--jobs", type=int, default=4, help="episodes judged at once")
+    g.add_argument("--timeout", type=float, default=600, help="seconds per judge request")
+    g.add_argument("--regrade", action="store_true", help="ignore cached grades")
     args = ap.parse_args()
     if args.cmd == "run":
         sys.exit(cmd_run(args))
+    if args.cmd == "grade":
+        sys.exit(cmd_grade(args))
+
+
+def cmd_grade(args):
+    from harness import Provider
+
+    import grade
+
+    run = json.loads((Path(args.batch) / "run.json").read_text())
+    provider = Provider(url=args.url or run["settings"]["url"], model=args.judge_model,
+                        api_key=os.getenv(args.key_env), temperature=0, timeout=args.timeout)
+    scores = grade.grade_batch(args.batch, provider, jobs=args.jobs, regrade=args.regrade)
+    grade.print_table(scores)
+    print(f"-> {Path(args.batch) / 'scores.json'}", file=sys.stderr)
+    return 0
 
 
 if __name__ == "__main__":

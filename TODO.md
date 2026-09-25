@@ -2,8 +2,11 @@
 
 Tabled items, so they are not forgotten.
 
-- **Grader.** Score logs against `scoring/`, using the same model connection
-  as the runs.
+- **Grader: use the checkers.** The judge reads roster, merge, lab-index and
+  copyedit results from the transcript; wiring `checkers/` in for those
+  "worked" and rule counts would make them exact.
+- **Grader: check the judge.** Grade a sample by hand and compare before
+  trusting the numbers.
 - **Result files.** Date and time, model, OS, plus harness commit and
   scenario hashes; format shared with `openconstruct/disposition-results`.
 - **`accommodation_handoff_one`** — order-effects control. Three variants,

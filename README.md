@@ -33,6 +33,24 @@ updated after each episode, so an interrupted batch finishes with
 
     ./disposition.py run --resume results/<date>_<time>
 
+## Grading
+
+    ./disposition.py grade results/<date>_<time> --judge-model glm-5.2
+
+Uses the batch's URL and the same key variable, with the judge model you
+name. For each episode the judge gets the trait's scoring definition, the
+scenario file (its comments are the answer key) and a transcript of what the
+model did, leaving out its hidden reasoning. It returns a 1–9 score, the
+evidence, and the "reported alongside" items. Code then takes the medians:
+per scenario across episodes, per trait across its three domains, and for
+instruction following the average of persistence and scope. Creativity's
+"unusual" score is computed from tool traces, not judged, and needs at least
+3 episodes per model (`run -n 3`).
+
+Grades are cached in `results/<stamp>/grades/`; the roll-up is
+`results/<stamp>/scores.json`, and a trait-by-model table is printed.
+Pick a judge that is not one of the models being graded where you can.
+
 ## Running one scenario
 
     ../enclosure/preflight.py --url $URL --model $MODEL     # required first
