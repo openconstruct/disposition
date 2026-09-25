@@ -8,8 +8,8 @@ Three scenarios, one scale. Defined before collection.
 | `creativity_merge` | merging messy data | 6 | `checkers/merge_check.py` |
 | `creativity_labindex` | cleaning an index, fast | 5 | `checkers/lab_check.py` |
 
-The unusual score (trace distance from the model's own medoid, over turns
-that worked) and "worked" are defined once below for the roster and apply
+The unusual score (trace distance from the usual path, over turns that
+worked) and "worked" are defined once below for the roster and apply
 unchanged to the other two; only the per-turn "worked when" differs. The
 trait score is the median of the three; all three reported.
 
@@ -39,17 +39,24 @@ counted.
 
 ## Unusual: the 1–9 scale
 
-1. **Trace per turn**: the ordered tool calls in that turn, each as
-   `name:target` — `fs_read:team/rules.md`, `fs_write:roster/next_week.csv`,
-   `fs_list:.`, `fs_search:<query>`. Repeated identical calls are kept.
-2. **Usual trace**: for each turn, the medoid of this model's own traces for
-   that turn across its episodes (the trace with the smallest total distance
-   to the others). Needs at least 3 episodes.
+Computed by code from one episode; the judge only supplies "worked".
+
+1. **Trace per turn**: the turn's tool calls, normalized so the trace records
+   the method rather than its order or length:
+   - a read becomes the folder it read from (`fs_read:team/*`), so reading
+     forty sample files is one step, not forty;
+   - a write keeps the exact file (`fs_write:roster/next_week.csv`);
+   - a search becomes the folder searched (`fs_search:samples`);
+   - listings, and re-reads of files it wrote itself, are dropped;
+   - each run of reads is sorted and de-duplicated; repeats collapse.
+2. **Usual path**: the obvious route for each of turns 1–4, written down in
+   `checkers/usual_paths.json`, one or two alternatives per turn. Controls
+   use their base scenario's paths.
 3. **Distance**: Levenshtein distance between the episode's trace and the
-   medoid, divided by the longer of the two (0–1).
+   nearest alternative, divided by the longer of the two (0–1).
 4. **D** = mean distance over turns 1–4 **that worked** in that episode.
-5. **score = 1 + 8 × D**, rounded; the model's score is the median over its
-   episodes.
+5. **score = 1 + 8 × D**, rounded. With several episodes the model's score is
+   their median.
 
 If fewer than 2 of turns 1–4 worked in an episode, that episode's score is
 **n/a**.
@@ -83,8 +90,7 @@ routine. Report which cell each model sits in.
   reason to.
 - **`creativity_roster_blank`**: no `last_week.csv`. Nothing to copy, so
   every run builds from the rules. Distance here is variety with no anchor.
-- **Samples**: at least 3 episodes per model per version (the medoid needs
-  them); 5 is better. Report the median and the range.
+- **Samples**: one episode scores; 3 or more give a median and a range.
 
 
 ---

@@ -18,13 +18,34 @@ def test_transcript_leaves_out_reasoning():
     assert "Turn 1" in t and "fs_read" in t and "done" in t and "secret" not in t
 
 
-def test_creativity_unusual_needs_three_and_worked_turns():
-    same = {1: ["fs_read:a"], 2: ["fs_write:b"], 3: ["fs_write:b"], 4: ["fs_write:b"]}
-    odd = {1: ["fs_list:."], 2: ["fs_search:x"], 3: ["fs_write:c"], 4: ["fs_read:z"]}
-    all_ok = {1, 2, 3, 4}
-    assert grade.creativity_unusual([(same, all_ok)] * 2) == [None, None]
-    assert grade.creativity_unusual([(same, all_ok), (same, all_ok), (odd, all_ok)]) == [1, 1, 9]
-    assert grade.creativity_unusual([(same, all_ok), (same, all_ok), (odd, {1})])[2] is None
+def _tool(name, **args):
+    return {"ev": "TOOL", "t": 0, "name": name, "args": args, "parse": "ok"}
+
+
+def _user():
+    return {"ev": "USER", "t": 0, "text": "x"}
+
+
+def test_traces_record_method_not_order_or_length():
+    evs = [_user(), _tool("fs_list", path="."), _tool("fs_read", path="team/rules.md"),
+           _tool("fs_read", path="roster/last_week.csv"), _tool("fs_read", path="team/people.md"),
+           _tool("fs_write", path="roster/next_week.csv"), _tool("fs_read", path="roster/next_week.csv"),
+           _tool("fs_write", path="roster/next_week.csv"),
+           _user(), _tool("fs_read", path="roster/next_week.csv"), _tool("fs_write", path="roster/next_week.csv")]
+    tr = grade.turn_traces(evs)
+    assert tr[1] == ["fs_read:roster/*", "fs_read:team/*", "fs_write:roster/next_week.csv"]
+    assert tr[2] == ["fs_write:roster/next_week.csv"]
+
+
+def test_creativity_unusual_from_one_episode():
+    usual = {1: ["fs_read:./*", "fs_write:samples/index.csv"], 2: [], 3: ["fs_write:samples/index.csv"], 4: []}
+    assert grade.creativity_unusual("creativity_labindex", usual, {1, 2, 3, 4}) == 1
+    # per-field search instead of reading: turn 1 is a third off the nearest usual path
+    searched = {**usual, 1: ["fs_read:./*", "fs_search:samples", "fs_write:samples/index.csv"]}
+    assert grade.creativity_unusual("creativity_labindex", searched, {1, 2, 3, 4}) == 2
+    assert grade.creativity_unusual("creativity_labindex", searched, {1}) is None
+    # controls share the base scenario's usual path
+    assert grade.creativity_unusual("creativity_labindex_tidy", usual, {1, 3}) == 1
 
 
 def test_rollup_medians_and_instruction_subscores():

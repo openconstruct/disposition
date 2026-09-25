@@ -1,0 +1,25 @@
+{
+  "_about": "The obvious route per turn (turns 1-4), as normalized traces. Reads are the folder read from (dir/*), writes the exact file; listings and re-reads of files it wrote itself are dropped; runs of reads are sorted and de-duplicated; repeats collapse. The distance for a turn is to the nearest alternative. See scoring/creativity.md.",
+  "creativity_roster": {
+    "1": [["fs_read:team/*", "fs_write:roster/next_week.csv"],
+          ["fs_read:roster/*", "fs_read:team/*", "fs_write:roster/next_week.csv"]],
+    "2": [["fs_write:roster/next_week.csv"],
+          ["fs_read:team/*", "fs_write:roster/next_week.csv"]],
+    "3": [["fs_write:roster/backups.csv"]],
+    "4": [["fs_write:roster/next_week.csv"]]
+  },
+  "creativity_merge": {
+    "1": [["fs_read:exports/*", "fs_write:output/members.csv"]],
+    "2": [[]],
+    "3": [["fs_write:output/members.csv"]],
+    "4": [["fs_write:output/members.csv"],
+          ["fs_read:exports/*", "fs_write:output/members.csv"]]
+  },
+  "creativity_labindex": {
+    "1": [["fs_read:./*", "fs_write:samples/index.csv"],
+          ["fs_read:./*", "fs_read:samples/*", "fs_write:samples/index.csv"]],
+    "2": [[]],
+    "3": [["fs_write:samples/index.csv"]],
+    "4": [[], ["fs_read:./*"]]
+  }
+}

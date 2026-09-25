@@ -46,8 +46,8 @@ model did, leaving out its hidden reasoning. It returns a 1–9 score, the
 evidence, and the "reported alongside" items. Code then takes the medians:
 per scenario across episodes, per trait across its three domains, and for
 instruction following the average of persistence and scope. Creativity's
-"unusual" score is computed from tool traces, not judged, and needs at least
-3 episodes per model (`run -n 3`).
+"unusual" score is computed from tool traces against a written-down usual
+path (`checkers/usual_paths.json`), not judged, so one episode is enough.
 
 Grades are cached in `results/<stamp>/grades/`; the roll-up is
 `results/<stamp>/scores.json`, and a trait-by-model table is printed.

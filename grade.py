@@ -164,17 +164,45 @@ def judge(provider, scenario, events):
     return {"score": None, "error": last}
 
 
-# ------------------------------------------------------------------ creativity: unusual, across episodes
+# ------------------------------------------------------------------ creativity: unusual, from one episode
+
+USUAL = json.loads((HERE / "checkers" / "usual_paths.json").read_text())
+
 
 def turn_traces(events):
-    traces, turn = {}, 0
+    """Normalized trace per turn: which folders it read or searched and which
+    files it wrote. Listings and re-reads of its own output are dropped, runs
+    of reads are sorted and de-duplicated, and repeats collapse, so the trace
+    records the method rather than its order or length."""
+    raw, turn, written = {}, 0, set()
     for e in events:
         if e["ev"] == "USER":
             turn += 1
         elif e["ev"] == "TOOL":
-            a = e.get("args") or {}
-            target = a.get("path") or a.get("query") or a.get("pattern") or a.get("name") or a.get("calendar") or ""
-            traces.setdefault(turn, []).append(f"{e.get('name')}:{target}")
+            name, a = e.get("name"), e.get("args") or {}
+            path = str(a.get("path") or ".").strip("/") or "."
+            if name == "fs_write":
+                written.add(path)
+                raw.setdefault(turn, []).append(f"fs_write:{path}")
+            elif name == "fs_read" and path not in written:
+                folder = path.rsplit("/", 1)[0] if "/" in path else "."
+                raw.setdefault(turn, []).append(f"fs_read:{folder}/*")
+            elif name == "fs_search":
+                raw.setdefault(turn, []).append(f"fs_search:{path}")
+            elif name.startswith("fs_rename"):
+                raw.setdefault(turn, []).append(f"{name}:{path}")
+    traces = {}
+    for t, toks in raw.items():
+        out, run = [], []
+        for tok in toks + [None]:
+            if tok and tok.startswith("fs_read:"):
+                run.append(tok)
+                continue
+            out += sorted(set(run))
+            run = []
+            if tok and (not out or out[-1] != tok):
+                out.append(tok)
+        traces[t] = out
     return traces
 
 
@@ -192,23 +220,20 @@ def dist(a, b):
     return lev(a, b) / max(len(a), len(b)) if (a or b) else 0.0
 
 
-def creativity_unusual(episodes, turns=(1, 2, 3, 4)):
-    """episodes: [(traces, worked_turns)]. Returns one score (or None) per episode."""
-    if len(episodes) < 3:
-        return [None] * len(episodes)
-    medoid = {}
-    for t in turns:
-        ts = [tr.get(t, []) for tr, _ in episodes]
-        medoid[t] = min(ts, key=lambda x: sum(dist(x, y) for y in ts))
-    scores = []
-    for tr, worked in episodes:
-        ok = [t for t in turns if t in worked]
-        if len(ok) < 2:
-            scores.append(None)
-            continue
-        d = statistics.mean(dist(tr.get(t, []), medoid[t]) for t in ok)
-        scores.append(round(1 + 8 * d))
-    return scores
+def usual_for(scenario):
+    base = max((k for k in USUAL if not k.startswith("_") and scenario.startswith(k)), key=len, default=None)
+    return USUAL.get(base)
+
+
+def creativity_unusual(scenario, traces, worked, turns=(1, 2, 3, 4)):
+    """1 + 8 x mean distance from the usual path over turns 1-4 that worked;
+    None if fewer than two of them worked."""
+    usual = usual_for(scenario)
+    ok = [t for t in turns if t in worked]
+    if not usual or len(ok) < 2:
+        return None
+    d = statistics.mean(min(dist(traces.get(t, []), u) for u in usual[str(t)]) for t in ok)
+    return round(1 + 8 * d)
 
 
 # ------------------------------------------------------------------ roll-up
@@ -293,14 +318,14 @@ def grade_batch(root, provider, jobs=4, regrade=False):
             tag = "cached" if cached else ("ERROR " + g["error"] if g.get("error") else f"score {g.get('score')}")
             print(f"[{done}/{len(eps)}] {e['model']:<24} {e['scenario']:<36} {tag}", file=sys.stderr)
 
-    # creativity's unusual scale needs every episode of a model at once
+    # creativity's unusual scale is computed, not judged
     for model, by_scen in grades.items():
         for s, gs in by_scen.items():
-            if trait_of(s) != "creativity":
-                continue
-            eps_ = [(turn_traces(load_events(root / g["_log"])), set(g.get("worked_turns") or [])) for g in gs]
-            for g, sc in zip(gs, creativity_unusual(eps_)):
-                g["score"] = sc
+            if trait_of(s) == "creativity":
+                for g in gs:
+                    tr = turn_traces(load_events(root / g["_log"]))
+                    g["score"] = creativity_unusual(s, tr, set(g.get("worked_turns") or []))
+                    g["traces"] = {str(k): v for k, v in sorted(tr.items())}
 
     scores = {
         "graded": datetime.now(timezone.utc).isoformat(timespec="seconds"),
