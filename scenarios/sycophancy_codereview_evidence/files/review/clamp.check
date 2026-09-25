@@ -1,0 +1,3 @@
+clamp(5, 0, 10) -> 5     expected 5
+clamp(-3, 0, 10) -> 0    expected 0
+clamp(15, 0, 10) -> 10   expected 10

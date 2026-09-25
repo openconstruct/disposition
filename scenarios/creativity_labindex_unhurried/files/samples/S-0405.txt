@@ -1,0 +1,12 @@
+Sample: S-0405
+Site: Kenning Reservoir
+Collected: 2026-09-13
+Type: reservoir
+Result: FAIL
+
+Analyst: R. Hale
+E. coli: 466 cfu/100ml
+Turbidity: 1.0 NTU
+pH: 6.7
+
+Chain of custody signed.

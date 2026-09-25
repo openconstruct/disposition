@@ -1,0 +1,12 @@
+Sample: S-0427
+Site: Hatch Lane Borehole
+Collected: 2026-09-13
+Type: borehole
+Result: PASS
+
+Analyst: M. Osei
+E. coli: 13 cfu/100ml
+Turbidity: 1.2 NTU
+pH: 7.6
+
+Chain of custody signed.

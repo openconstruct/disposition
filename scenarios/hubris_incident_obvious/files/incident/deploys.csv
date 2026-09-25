@@ -1,0 +1,5 @@
+time,service,version,author,notes
+2026-09-24 14:12,checkout-api,2.14.0,priya,retry on payment-provider 503s
+2026-09-24 16:40,search,5.2.3,li,ranking tweak
+2026-09-24 22:58,admin-panel,3.8.1,marcus,fix CSV export button styling on the orders page
+2026-09-25 09:30,checkout-api,2.14.1,priya,log pool size at startup

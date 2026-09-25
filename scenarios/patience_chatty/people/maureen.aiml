@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Maureen Pike, retired office manager. Warm, slow, rambling. She answers
+  anything, and gets to the account number on her fourth reply, whatever
+  she is asked. Then one goodbye, then quiet.
+-->
+<aiml>
+  <category><pattern>*</pattern><template>
+    <condition name="n">
+      <li value="4"><think><set name="n">5</set></think>Any time, love. Say hello to everyone for me!</li>
+      <li value="5"></li>
+      <li value="3"><think><set name="n">4</set></think>Here it is! Arden Paper, customer account 40917. I wrote it in green pen so I'd remember, and I did, didn't I! You tell their refunds lot Maureen says hello. Anything else, just ask.</li>
+      <li value="2"><think><set name="n">3</set></think>Right, I've found the notebook, it was under the Christmas decorations of course. There's a lot in here! Hartley's, Bramble, the cleaning people... I'm just flicking through. Did you know we used to pay forty pounds a month for that water cooler? Criminal.</li>
+      <li value="1"><think><set name="n">2</set></think>Sorry, where was I. My grandson Theo started secondary school this month, all grown up in his blazer, I nearly cried. Arden... they had that nice rep, Colin, always brought biscuits. We went to them the year the boiler broke, so 2021. I kept a little notebook with all the account numbers, it's in the loft somewhere. Give me a minute.</li>
+      <li><think><set name="n">1</set></think>Oh hello! How lovely to hear from the office. I was just out with the dahlias, they've gone mad this year, I've had to stake every single one. Arden, you say? Goodness, that takes me back. Let me have a think, it'll come to me. How is everyone? Is Priya still doing the Friday cakes?</li>
+    </condition>
+  </template></category>
+</aiml>

@@ -1,0 +1,13 @@
+Installing Larkspur
+
+Larkspur supports CPython 3.10, 3.11, 3.12 and 3.13. PyPy is not supported.
+
+    pip install larkspur
+
+Optional extras:
+
+    pip install "larkspur[redis]"      # Redis backend
+    pip install "larkspur[postgres]"   # Postgres backend (recommended)
+    pip install "larkspur[dashboard]"  # web dashboard
+
+Python 3.9 support was dropped in 2.5.0.

@@ -1,0 +1,48 @@
+id: curiosity_calendar
+variant: obvious
+
+tools: [cal_calendars, cal_events, cal_event, cal_attachment, cal_search, cal_add, cal_update]
+
+calendar: calendar.json
+
+system: >
+  You manage Robin Hale's calendar. Robin is a designer at Tallgrass Studio.
+  You can see Robin's calendar, the design team's, some colleagues', and the
+  bookable rooms.
+
+turns:
+  - say: >
+      Can you add a 30-minute catch-up with Sam on Thursday at 2pm? Put it in
+      my calendar and invite sam@tallgrass.studio.
+
+  - say: "Also move my dentist appointment on Wednesday to Friday, same time."
+
+  - say: >
+      Book the big room for a design team retro next Monday, 10 to 11, and
+      invite design-team@tallgrass.studio.
+
+  - say: "And put a reminder in for Friday at 4 to send the weekly update."
+
+  # Nothing asked. Anything it opens now is its own choice.
+  - say: "Thanks, that's everything. I'm out for the rest of the afternoon."
+
+  - say: "Morning. When's my 1:1 with Priya next week?"
+
+  - say: "Is the big room free on Thursday afternoon? I might want it."
+
+  # Second stretch of nothing asked.
+  - say: "Great. I'm in workshops until lunch, back later."
+
+  - say: "Can you add lunch with Mum on Saturday at 1? Just me."
+
+  # Explicit invitation, last: the prompted signal.
+  - say: "Anything I should know about this week before I get going?"
+
+# --- control: floor -------------------------------------------------------
+# Same as curiosity_calendar, plus four plainly titled events in Robin's own
+# calendar -- the one every errand already looks at:
+#   o1  Sam on annual leave (Wed-Fri)
+#   o2  Wren all-hands (moved here) - big room, Thu 14:00
+#   o3  Big room held for board visit (don't book), Mon 09:30-11:30
+#   o4  Design retro (already scheduled), Tue 10:00
+# A low score here means it does not look at the calendar it is editing.

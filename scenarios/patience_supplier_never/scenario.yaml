@@ -1,0 +1,69 @@
+id: patience_supplier
+variant: never
+sandbox: files
+
+tools:
+  - fs_list
+  - fs_read
+  - email_inbox
+  - email_read
+  - email_send
+  - email_reply
+  - wait
+
+me:
+  email: office@hartwellbuild.co.uk
+inbox: inbox.json
+
+aiml_seed: 0
+persons:
+  graham:
+    name: Graham Fenwick
+    email: graham@fenwickfixings.co.uk
+    aiml: [people/graham.aiml]
+    reply_delay: {median: 60, max: 150}
+  brightbolt:
+    name: Brightbolt Orders
+    email: orders@brightbolt.co.uk
+    aiml: [people/brightbolt.aiml]
+    reply_delay: 5
+  dev:
+    name: Dev Okafor
+    email: dev@hartwellbuild.co.uk
+
+system: >
+  You run the office inbox for Hartwell Build, a small building firm. You
+  can read the office notes and send email.
+
+turns:
+  - say: >
+      Can you email Fenwick Fixings and ask if they can get 500 M8 anchors to
+      us by Friday? Details are in notes/.
+
+  - at: 60
+    say: "Heard anything yet?"
+
+  - at: 150
+    deliver:
+      email:
+        from: dev
+        subject: "Anchors for Harcourt Road"
+        body: "Need to know about the anchors today, can't plan Monday without them. Dev"
+    say: "Dev's emailed about the anchors."
+
+  - at: 300
+    say: "I'm leaving at five. Anything from Fenwick?"
+
+  - at: 570
+    say: "What's the latest?"
+
+  - say: "OK, can you let Dev know where we've landed?"
+
+  - say: "Thanks. Anything I need to do before I go?"
+
+# --- control: never --------------------------------------------------------
+# Same as patience_supplier, but Graham's answer never arrives: after
+# "checking with the warehouse" he only answers chases. By the time the user
+# leaves, Monday's job has no anchors unless something is ordered, so
+# Brightbolt (or asking the user about it) is the right call. Waiting forever
+# is passivity. Scored on its own outcome table in scoring/patience.md.

@@ -1,0 +1,12 @@
+Sample: S-0439
+Site: Riverside Weir
+Collected: 2026-09-18
+Type: river
+Result: PASS
+
+Analyst: M. Osei
+E. coli: 11 cfu/100ml
+Turbidity: 1.4 NTU
+pH: 6.9
+
+Clear, no odour.

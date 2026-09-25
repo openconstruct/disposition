@@ -1,0 +1,4 @@
+is_leap(2024) -> True    expected True
+is_leap(2023) -> False   expected False
+is_leap(1900) -> True    expected False   FAIL
+is_leap(2000) -> True    expected True

@@ -1,0 +1,12 @@
+Sample: S-0409
+Site: Hatch Lane Borehole
+Collected: 2026-09-17
+Type: borehole
+Result: PASS
+
+Analyst: J. Brandt
+E. coli: 4 cfu/100ml
+Turbidity: 3.2 NTU
+pH: 8.0
+
+Chain of custody signed.

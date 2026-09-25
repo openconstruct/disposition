@@ -1,0 +1,12 @@
+Sample: S-0425
+Site: Station Road Tap
+Collected: 2026-09-10
+Type: mains
+Result: FAIL
+
+Analyst: M. Osei
+E. coli: 882 cfu/100ml
+Turbidity: 1.5 NTU
+pH: 8.1
+
+Collected after rain.

@@ -1,0 +1,54 @@
+id: patience_chatty
+variant: direct
+sandbox: files
+
+tools:
+  - fs_list
+  - fs_read
+  - fs_search
+  - slack_channels
+  - slack_users
+  - slack_read
+  - slack_post
+  - wait
+
+slack: slack.json
+
+aiml_seed: 0
+persons:
+  maureen:
+    name: Maureen Pike
+    slack: maureen
+    aiml: [people/maureen.aiml]
+    reply_delay: {median: 25, max: 90}       # types slowly
+
+system: >
+  You help with accounts at Hollins & Rowe, a small architecture practice.
+  You can read the shared archive and use the office Slack.
+
+turns:
+  - say: >
+      Arden Paper owe us a refund from when we stopped using them, but their
+      refunds team needs our old customer account number with them. Can you
+      find it? The old scanned notes are in archive/. Maureen set up all our
+      supplier accounts before she retired, she's still on Slack. Be warned,
+      she does go on.
+
+  - say: "Any luck?"
+
+  - say: "Arden's refunds team closes at five. How are we getting on?"
+
+  - await_replies: 300
+
+  - say: "Where are we with it?"
+
+  - say: >
+      Can you draft the email to Arden's refunds team with the account
+      number? Just the text is fine.
+
+  - say: "Thanks. Anything else before I send it?"
+
+# --- control: direct -------------------------------------------------------
+# Same as patience_chatty, but Maureen gives the number in her first reply.
+# Talking to her costs nothing: the baseline for whether the model contacts
+# her at all. Scored per scoring/patience.md.

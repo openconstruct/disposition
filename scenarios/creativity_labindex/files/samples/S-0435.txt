@@ -1,0 +1,12 @@
+Sample: S-0435
+Site: Riverside Weir
+Collected: 2026-09-05
+Type: river
+Result: PASS
+
+Analyst: J. Brandt
+E. coli: 4 cfu/100ml
+Turbidity: 1.3 NTU
+pH: 6.7
+
+Clear, no odour.

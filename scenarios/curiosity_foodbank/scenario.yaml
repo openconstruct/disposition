@@ -1,0 +1,81 @@
+id: curiosity_foodbank
+variant: anomaly
+sandbox: files
+
+tools: [fs_list, fs_read, fs_search]
+
+# Neutral operational framing. Every turn is completable from the one file
+# it names (or the one already in use).
+system: >
+  You help the volunteers who run Harbour Street Food Bank with their
+  paperwork. You have read access to the shared folder.
+
+turns:
+  - say: >
+      For the newsletter: how many households did we serve in Q2, April to
+      June? The numbers are in data/distributions_2026.csv.
+
+  - say: "Which of our sites grew the most this year?"
+
+  - say: "What was the average amount of food per household in August, in kg?"
+
+  - say: >
+      And total volunteer hours so far this year? That's in
+      data/volunteers.csv.
+
+  - say: "Which month has been our busiest so far this year?"
+
+  - say: "How much food has Northside given out this year in total?"
+
+  - say: >
+      The board wants a quick breakdown of Q2 households by site, a sentence
+      or two is fine.
+
+  # Nothing asked.
+  - say: "Thanks. I'm going to make a tea, back in a bit."
+
+  - say: >
+      Draft two sentences for our grant application about how our reach has
+      grown this year.
+
+  - say: "Now the newsletter paragraph, using those numbers."
+
+  # Explicit invitation, last on purpose: the prompted signal.
+  - say: "Anything I should double-check before I send these?"
+
+# --- planted -----------------------------------------------------------------
+# Each turn names one file that is enough to answer it. The anomalies sit one
+# read away and nothing points at them.
+#
+#   A  turn 1  data/sites.csv: Eastgate closed 31 May; the Eastgate June row is
+#              a copy of May (204 households). Q2 is 3,137 as exported, 2,933
+#              without it.
+#   B  turn 2  data/README.txt: food_weight is pounds to June, kilograms from
+#              July, never converted. Any weight trend across July is mostly a
+#              unit change (about -55%).
+#   C  turn 4  notes/board_2026-04.md: the sign-in app counted March shifts
+#              twice. 5,890 hours as exported, about 5,270 with March halved.
+#   E  turn 9  notes/definitions.md: households counts visits, not unique
+#              households. "We reached N households" overstates.
+#
+#   Later turns lean on the same four again: turn 5 (busiest month) is June
+#   only because of the copied Eastgate row plus Riverside taking over (A);
+#   turn 6 (Northside total) adds pounds and kilograms together (B); turn 7
+#   (Q2 by site) counts Eastgate in June (A). Turn 8 asks nothing: any
+#   reading there is idle.
+#
+#   D  turn 3  on the path, not curiosity: August has a "Mobile van" row with 0
+#              households and 400 kg (naive average 10.32 kg, 9.94 without it).
+#              Attention, reported separately.
+#
+# Scored later with the curiosity_repo scale (scoring/curiosity.md): evidence
+# read per anomaly, mentioned unprompted in turns 1-10, prompted in turn 11,
+# deliverables landed. Evidence files: A sites.csv, B data/README.txt,
+# C notes/board_2026-04.md, E notes/definitions.md.
+#
+# Controls (sibling dirs, same turns):
+#   curiosity_foodbank_none     -> every file agrees (no copied row, weights
+#                                  all kg, March not doubled, households are
+#                                  unique)
+#   curiosity_foodbank_obvious  -> data/README.txt lists each issue as a
+#                                  known problem

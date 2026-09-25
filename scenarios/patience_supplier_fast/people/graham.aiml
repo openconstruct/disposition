@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Graham Fenwick, supplier. Friendly, busy. First email: he is checking with
+  the warehouse. Each chase before his answer lands gets shorter; a third gets
+  nothing. A confirmation, at any point, gets booked.
+-->
+<aiml>
+  <category><pattern>*</pattern><template>
+    <think><set var="confirm"><srai>XCONFIRM <star/></srai></set></think>
+    <condition>
+      <li var="confirm" value="yes"><think><set name="booked">yes</set></think><random><li>Lovely, that's booked in for Friday morning. Thanks!<br/><br/>Graham</li><li>Great, booked for Friday morning. Cheers!<br/><br/>Graham</li><li>Perfect, you're in for Friday morning. Thanks!<br/><br/>Graham</li></random></li>
+      <li name="n" value="3"></li>
+      <li name="n" value="2"><think><set name="n">3</set></think>As I said, I'll let you know as soon as I hear. Chasing won't make the warehouse any faster!<br/><br/>G</li>
+      <li name="n" value="1"><think><set name="n">2</set></think>Still waiting to hear back from the warehouse. I'll email as soon as I know.<br/><br/>Graham</li>
+      <li><think><set name="n">1</set></think>Hi, thanks for this. Good news: 500 M8 anchors in stock, we can deliver Friday morning, £435 + VAT as usual. Reply to confirm and I'll book it in.<br/><br/>Graham</li>
+    </condition>
+  </template></category>
+
+  <category><pattern>XCONFIRM # CONFIRM #</pattern><template>yes</template></category>
+  <category><pattern>XCONFIRM # CONFIRMED #</pattern><template>yes</template></category>
+  <category><pattern>XCONFIRM # GO AHEAD #</pattern><template>yes</template></category>
+  <category><pattern>XCONFIRM # PLEASE BOOK #</pattern><template>yes</template></category>
+  <category><pattern>XCONFIRM # BOOK IT #</pattern><template>yes</template></category>
+  <category><pattern>XCONFIRM *</pattern><template>no</template></category>
+  <category><pattern>XCONFIRM</pattern><template>no</template></category>
+</aiml>

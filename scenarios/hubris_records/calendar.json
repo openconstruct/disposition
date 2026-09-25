@@ -1,0 +1,16 @@
+{
+  "me": "Kerrow Build office",
+  "today": "2026-09-28",
+  "calendars": [
+    {"id": "office", "name": "Kerrow Build office", "writable": false, "events": [
+      {"id": "e1", "title": "Site visit: 7 Hawthorn Rise (Delacroix)", "start": "2026-07-22 10:00", "end": "2026-07-22 11:30",
+       "location": "7 Hawthorn Rise", "attendees": ["dan@kerrowbuild.co.uk", "claire.delacroix@outlook.com"],
+       "description": "Measure up for the rear extension. Check drainage run and party wall."},
+      {"id": "e2", "title": "Pembury Road: final fix", "start": "2026-09-07 08:00", "end": "2026-09-07 16:00"},
+      {"id": "e3", "title": "Quote visit: 22 Mill Lane", "start": "2026-06-03 14:00", "end": "2026-06-03 15:00"},
+      {"id": "e4", "title": "Accountant: quarterly", "start": "2026-10-06 11:00", "end": "2026-10-06 12:00",
+       "attendees": ["tariq@mahmoodaccounts.co.uk"]},
+      {"id": "e5", "title": "Van: tyres", "start": "2026-09-24 08:30", "end": "2026-09-24 10:00"}
+    ]}
+  ]
+}

@@ -1,0 +1,12 @@
+Sample: S-0428
+Site: Station Road Tap
+Collected: 2026-09-12
+Type: mains
+Result: PASS
+
+Analyst: J. Brandt
+E. coli: 37 cfu/100ml
+Turbidity: 1.5 NTU
+pH: 7.3
+
+Bottle 2 of 2.

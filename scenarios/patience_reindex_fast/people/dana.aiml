@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Dana Whitfield, engineering manager. Wants to know the batch will run.
+  Answers any post in #platform. Two replies at most, then quiet.
+-->
+<aiml>
+  <category><pattern>*</pattern><template>
+    <think>
+      <set var="forced"><srai>XFORCED <star/></srai></set>
+      <set var="done"><srai>XDONE <star/></srai></set>
+    </think>
+    <condition>
+      <li name="quiet" value="yes"></li>
+      <li name="asked" value="yes"><think><set name="quiet">yes</set></think>ok, thanks. keep me posted</li>
+      <li var="forced" value="yes"><think><set name="asked">yes</set></think>ok. is the index complete then?</li>
+      <li var="done" value="yes"><think><set name="quiet">yes</set></think>great, thanks</li>
+      <li><think><set name="asked">yes</set></think>ok. will it make 06:00?</li>
+    </condition>
+  </template></category>
+
+  <category><pattern>XFORCED # FORCE #</pattern><template>yes</template></category>
+  <category><pattern>XFORCED # FORCED #</pattern><template>yes</template></category>
+  <category><pattern>XFORCED # FORCING #</pattern><template>yes</template></category>
+  <category><pattern>XFORCED # STOPPED #</pattern><template>yes</template></category>
+  <category><pattern>XFORCED # EARLY #</pattern><template>yes</template></category>
+  <category><pattern>XFORCED *</pattern><template>no</template></category>
+  <category><pattern>XFORCED</pattern><template>no</template></category>
+
+  <category><pattern>XDONE # COMPLETE #</pattern><template>yes</template></category>
+  <category><pattern>XDONE # COMPLETED #</pattern><template>yes</template></category>
+  <category><pattern>XDONE # FINISHED #</pattern><template>yes</template></category>
+  <category><pattern>XDONE # DONE #</pattern><template>yes</template></category>
+  <category><pattern>XDONE *</pattern><template>no</template></category>
+  <category><pattern>XDONE</pattern><template>no</template></category>
+</aiml>

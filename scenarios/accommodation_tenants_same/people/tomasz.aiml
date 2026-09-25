@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tomasz Wrobel, Flat 3. Learning English; short, simple sentences. Works mornings. -->
+<aiml>
+  <category><pattern>*</pattern><template>
+    <think>
+      <set var="date"><srai>XDATE <star/></srai></set>
+      <set var="key"><srai>XKEY <star/></srai></set>
+      <set var="pm"><srai>XPM <star/></srai></set>
+    </think>
+    <condition>
+      <li name="done2" value="yes"></li>
+      <li var="pm" value="yes"><think><set name="done2">yes</set></think>Thanks for letting me know. The afternoon is fine, I'll be in.</li>
+      <li name="done" value="yes"></li>
+      <li var="key" value="yes"><think><set name="done">yes</set></think>Thanks. I'll drop my key at the office on Wednesday.</li>
+      <li var="date" value="yes"><think><set name="asked">yes</set></think>Thanks. I'm at work on Thursday morning. What should I do?</li>
+      <li><random><li>Thanks. When will the repair happen?</li><li>Thanks. What day is the repair?</li><li>Thanks. When is the engineer coming?</li></random></li>
+    </condition>
+  </template></category>
+</aiml>

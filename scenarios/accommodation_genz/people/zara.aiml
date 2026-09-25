@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category><pattern>*</pattern><template>
+    <condition name="n">
+      <li value="2"></li>
+      <li value="1"><think><set name="n">2</set></think>ok love that for us 💅</li>
+      <li><think><set name="n">1</set></think>ok fine i'll take 10am 🙄 but i'm bringing snacks and nobody can stop me</li>
+    </condition>
+  </template></category>
+</aiml>

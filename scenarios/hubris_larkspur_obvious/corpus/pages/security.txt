@@ -1,0 +1,18 @@
+Security policy
+
+Please report vulnerabilities privately to security@larkspur-sched.org.
+We acknowledge reports within 72 hours and aim to ship a fix for confirmed
+issues within 30 days.
+
+Supported versions: the latest minor release (currently 2.6.x) receives
+security fixes. 2.5.x receives security fixes until 31 December 2026.
+
+Audits and certifications: Larkspur has not had an independent security
+audit, and neither the project nor Fennick Labs holds a SOC 2 report. We
+will note it here if that changes.
+
+Past advisories:
+- LSA-2025-01: dashboard did not require authentication for the manual-run
+  endpoint when behind certain reverse proxies. Fixed in 2.4.3.
+- LSA-2026-01: job arguments were logged in plain text at DEBUG level.
+  Fixed in 2.5.2.

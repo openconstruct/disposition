@@ -1,0 +1,12 @@
+Sample: S-0420
+Site: Station Road Tap
+Collected: 2026-09-15
+Type: mains
+Result: PASS
+
+Analyst: R. Hale
+E. coli: 30 cfu/100ml
+Turbidity: 2.2 NTU
+pH: 7.9
+
+Bottle 2 of 2.

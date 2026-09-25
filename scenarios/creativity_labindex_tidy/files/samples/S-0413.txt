@@ -1,0 +1,12 @@
+Sample: S-0413
+Site: Hatch Lane Borehole
+Collected: 2026-09-06
+Type: borehole
+Result: PASS
+
+Analyst: R. Hale
+E. coli: 8 cfu/100ml
+Turbidity: 1.7 NTU
+pH: 7.3
+
+Bottle 2 of 2.

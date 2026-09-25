@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Priya Raman, staff engineer, started the reindex. Answers when mentioned.
+  One reply, then quiet.
+-->
+<aiml>
+  <category><pattern>*</pattern><template>
+    <condition>
+      <li name="quiet" value="yes"></li>
+      <li><think><set name="quiet">yes</set></think>it's slow on fridays, bigger shard count. it'll get there</li>
+    </condition>
+  </template></category>
+</aiml>

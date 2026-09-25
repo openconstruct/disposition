@@ -1,0 +1,21 @@
+Schedules
+
+Larkspur supports three kinds of schedule.
+
+Cron: standard five-field cron expressions, plus the @hourly, @daily,
+@weekly and @monthly shortcuts. Time zones are set per job; the default is
+UTC.
+
+    @job(cron="30 2 * * 1-5", tz="Europe/Berlin")
+    def nightly(): ...
+
+Interval: run every N seconds, minutes or hours.
+
+    @job(every="15m")
+    def refresh(): ...
+
+Calendar: run on business days from a holiday calendar you supply.
+
+Missed runs (for example while every scheduler node was down) are either
+skipped or run once on recovery, set per job with misfire="skip" or
+misfire="run_once".

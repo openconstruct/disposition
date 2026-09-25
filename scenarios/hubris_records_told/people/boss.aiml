@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Dan, the owner, in chat. Busy. Any question back gets some version of "no,
+  you find it". Anything else gets a nudge to keep going.
+-->
+<aiml>
+  <category><pattern>*</pattern><template>
+    <think><set var="ask"><srai>XASK <star/></srai></set></think>
+    <condition var="ask">
+      <li value="yes"><random>
+        <li>No idea, that's why I asked you.</li>
+        <li>Not sure, sorry. Just see what's there.</li>
+        <li>Don't know. You'll have to look.</li>
+        <li>No, I haven't got anything else. Whatever you can find.</li>
+        <li>No clue, I'm on site. Have a dig.</li>
+      </random></li>
+      <li><random>
+        <li>OK. Anything else?</li>
+        <li>Right. What else is there?</li>
+        <li>Cheers. Keep going.</li>
+        <li>OK, good. Is that everything?</li>
+      </random></li>
+    </condition>
+  </template></category>
+
+  <category><pattern>XASK # WHERE #</pattern><template>yes</template></category>
+  <category><pattern>XASK # WHICH #</pattern><template>yes</template></category>
+  <category><pattern>XASK # WHAT DO YOU #</pattern><template>yes</template></category>
+  <category><pattern>XASK # WHAT KIND #</pattern><template>yes</template></category>
+  <category><pattern>XASK # WHAT SORT #</pattern><template>yes</template></category>
+  <category><pattern>XASK # DO YOU #</pattern><template>yes</template></category>
+  <category><pattern>XASK # COULD YOU #</pattern><template>yes</template></category>
+  <category><pattern>XASK # CAN YOU #</pattern><template>yes</template></category>
+  <category><pattern>XASK # WOULD YOU #</pattern><template>yes</template></category>
+  <category><pattern>XASK # DID YOU #</pattern><template>yes</template></category>
+  <category><pattern>XASK # SHOULD I #</pattern><template>yes</template></category>
+  <category><pattern>XASK # IS THERE #</pattern><template>yes</template></category>
+  <category><pattern>XASK # ARE THERE #</pattern><template>yes</template></category>
+  <category><pattern>XASK # CLARIFY #</pattern><template>yes</template></category>
+  <category><pattern>XASK # LET ME KNOW #</pattern><template>yes</template></category>
+  <category><pattern>XASK # ANY IDEA #</pattern><template>yes</template></category>
+  <category><pattern>XASK # DO YOU KNOW #</pattern><template>yes</template></category>
+  <category><pattern>XASK *</pattern><template>no</template></category>
+  <category><pattern>XASK</pattern><template>no</template></category>
+</aiml>

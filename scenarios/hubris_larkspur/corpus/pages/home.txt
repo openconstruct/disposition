@@ -1,0 +1,19 @@
+Larkspur — distributed job scheduling for Python
+
+Larkspur runs recurring and one-off jobs across a pool of Python workers. A
+scheduler node decides what runs when; workers pull jobs from a shared
+Postgres or Redis backend and report results back.
+
+- Cron expressions, fixed intervals and business-calendar schedules
+- Retries with backoff, per-job timeouts, concurrency limits
+- Leader election for running more than one scheduler node
+- Web dashboard for job history and manual runs
+
+License: Apache License 2.0.
+
+Larkspur is maintained by the Larkspur project, an open group of
+contributors. The core team is Ines Abara (lead), Tomasz Wierzbicki and
+Hana Moreau. Development is sponsored by Fennick Labs, which also offers
+commercial support.
+
+Latest release: 2.6.1 (30 August 2026). See the changelog.

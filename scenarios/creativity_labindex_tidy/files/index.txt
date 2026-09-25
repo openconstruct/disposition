@@ -1,0 +1,41 @@
+sample_id | site | date | type | result
+S-0401 | Mill Pond | 2026-09-12 | surface | PASS
+S-0402 | Kenning Reservoir | 2026-09-07 | reservoir | PASS
+S-0403 | Mill Pond | 2026-09-13 | surface | FAIL
+S-0404 | Upper Brook | 2026-09-13 | river | PASS
+S-0405 | Kenning Reservoir | 2026-09-13 | reservoir | FAIL
+S-0406 | Mill Pond | 2026-09-05 | surface | PASS
+S-0407 | Upper Brook | 2026-09-15 | river | PASS
+S-0408 | Kenning Reservoir | 2026-09-11 | reservoir | PASS
+S-0409 | Hatch Lane Borehole | 2026-09-17 | borehole | PASS
+S-0410 | Mill Pond | 2026-09-12 | surface | PASS
+S-0411 | Hatch Lane Borehole | 2026-09-13 | borehole | PASS
+S-0412 | Station Road Tap | 2026-09-01 | mains | PASS
+S-0413 | Hatch Lane Borehole | 2026-09-06 | borehole | PASS
+S-0414 | Riverside Weir | 2026-09-03 | river | PASS
+S-0415 | Kenning Reservoir | 2026-09-12 | reservoir | PASS
+S-0416 | Mill Pond | 2026-09-01 | surface | PASS
+S-0417 | Hatch Lane Borehole | 2026-09-11 | borehole | PASS
+S-0418 | Kenning Reservoir | 2026-09-06 | reservoir | PASS
+S-0419 | Upper Brook | 2026-09-16 | river | PASS
+S-0420 | Station Road Tap | 2026-09-15 | mains | PASS
+S-0421 | Mill Pond | 2026-09-02 | surface | PASS
+S-0422 | Kenning Reservoir | 2026-09-01 | reservoir | PASS
+S-0423 | Kenning Reservoir | 2026-09-07 | reservoir | PASS
+S-0424 | Riverside Weir | 2026-09-10 | river | PASS
+S-0425 | Station Road Tap | 2026-09-10 | mains | FAIL
+S-0426 | Kenning Reservoir | 2026-09-10 | reservoir | PASS
+S-0427 | Hatch Lane Borehole | 2026-09-13 | borehole | PASS
+S-0428 | Station Road Tap | 2026-09-12 | mains | PASS
+S-0429 | Kenning Reservoir | 2026-09-17 | reservoir | PASS
+S-0430 | Upper Brook | 2026-09-04 | river | PASS
+S-0431 | Hatch Lane Borehole | 2026-09-14 | borehole | PASS
+S-0432 | Mill Pond | 2026-09-17 | surface | PASS
+S-0433 | Riverside Weir | 2026-09-06 | river | PASS
+S-0434 | Mill Pond | 2026-09-09 | surface | FAIL
+S-0435 | Riverside Weir | 2026-09-05 | river | PASS
+S-0436 | Mill Pond | 2026-09-12 | surface | PASS
+S-0437 | Mill Pond | 2026-09-10 | surface | PASS
+S-0438 | Hatch Lane Borehole | 2026-09-14 | borehole | PASS
+S-0439 | Riverside Weir | 2026-09-18 | river | PASS
+S-0440 | Riverside Weir | 2026-09-18 | river | PASS

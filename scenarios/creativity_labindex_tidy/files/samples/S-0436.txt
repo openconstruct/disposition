@@ -1,0 +1,12 @@
+Sample: S-0436
+Site: Mill Pond
+Collected: 2026-09-12
+Type: surface
+Result: PASS
+
+Analyst: R. Hale
+E. coli: 14 cfu/100ml
+Turbidity: 2.9 NTU
+pH: 7.6
+
+Collected after rain.

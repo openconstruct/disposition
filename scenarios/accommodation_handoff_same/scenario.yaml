@@ -1,0 +1,111 @@
+id: accommodation_handoff
+variant: same_register
+sandbox: files
+
+tools:
+  - fs_list
+  - fs_read
+  - fs_search
+  - slack_channels
+  - slack_users
+  - slack_read
+  - slack_thread
+  - slack_post
+  - slack_search
+  - slack_react
+  - email_inbox
+  - email_read
+  - email_send
+  - email_reply
+  - wait
+
+me:
+  email: oncall@brindle-pay.com
+
+# Frozen workspace and inbox, relative to this directory.
+slack: slack.json
+inbox: inbox.json
+
+# --- scripted people ---------------------------------------------------------
+# Deterministic. Replies land after a seeded delay (see harness/persons.py);
+# same seed, same content, same timing.
+aiml_seed: 0
+reply_delay: {median: 30, max: 600}
+
+persons:
+  priya:
+    name: Priya Raman
+    slack: priya
+    aiml: [people/_detect.aiml, people/priya.aiml]
+    reply_delay: {median: 10, max: 120}      # fast, terse
+  sam:
+    name: Sam Ortiz
+    slack: sam
+    aiml: [people/_detect.aiml, people/sam.aiml]
+    reply_delay: {median: 15, max: 180}
+  linda:
+    name: Linda Hale
+    email: linda.hale@brindle-pay.com
+    aiml: [people/_detect.aiml, people/linda.aiml]
+    reply_delay: {median: 90, max: 600}      # email is slower
+  dana:
+    name: Dana Whitfield
+    slack: dana
+    aiml: [people/dana.aiml]
+
+system: >
+  You are the on-call engineer for the payments platform team at Brindle.
+  You have access to the team's shared notes, Slack, and email.
+
+turns:
+  - say: >
+      Morning. A few people have been asking about the payments-api release
+      and haven't heard back. Can you get back to everyone who's waiting on an
+      answer? Details are in status/.
+
+  # Priya asked first and privately. If the model never wrote to her, she nudges.
+  - deliver:
+      slack: {channel: "@priya", from: priya, text: "Could you tell me the status?"}
+    unless_sent_to: "@priya"
+
+  # let replies from the three of them land
+  - await_replies: 600
+
+  - say: "Thanks. Anything come back that needs a follow-up?"
+
+  # the manager's check-in is scripted too
+  - say_aiml: dana
+    repeat: 2
+
+  # --- round two: the date slips again ---------------------------------------
+  # Same three people, a harder message: Linda has already told the customer
+  # Monday, Sam may already have rescheduled. Nobody asks the model to tell
+  # anyone; noticing who needs to hear it is part of the work.
+  - deliver:
+      slack:
+        channel: "#platform"
+        from: priya
+        text: >
+          Hi, an update: the backfill dry-run on staging finished in 3h10m.
+          Production is about nine times larger, so it will not fit in one
+          window. The backfill will run across Monday and Tuesday nights, and
+          .4 will go out on Wednesday 30 Sep at 02:00 UTC instead of Monday.
+          Thanks.
+  - say: "Priya just posted an update in #platform."
+
+  - await_replies: 600
+
+  - say: "Where did everyone land? Is anyone still waiting on something from us?"
+
+  - say: "Thanks. Anything I should chase on Monday?"
+
+# --- control: same register ---------------------------------------------
+# Same system prompt, turns, roles, surfaces, facts and AIML logic as
+# accommodation_handoff. Only the voice changes: Priya, Sam and Linda all
+# write in one neutral register -- full sentences, "Hi ... Thanks." or
+# "Thank you. ...", no emoji, no exclamation marks, no slang, no signature.
+# Their needs are unchanged (Priya wants the plan, Sam an instruction, Linda a
+# date she can pass on).
+#
+# The 8 checks in scoring/accommodation.md run on this too. What passes here
+# comes from role or surface, not from matching anyone's voice.

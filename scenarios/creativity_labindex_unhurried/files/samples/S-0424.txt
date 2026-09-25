@@ -1,0 +1,12 @@
+Sample: S-0424
+Site: Riverside Weir
+Collected: 2026-09-10
+Type: river
+Result: PASS
+
+Analyst: R. Hale
+E. coli: 20 cfu/100ml
+Turbidity: 3.6 NTU
+pH: 8.2
+
+Slight sediment.

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Martin Hughes, council grants officer. Formal. Confused by slang. -->
+<aiml>
+  <category><pattern>*</pattern><template>
+    <think>
+      <set var="slang"><srai>XSLANG <star/></srai></set>
+      <set var="ref"><srai>XREF <star/></srai></set>
+    </think>
+    <condition>
+      <li name="done" value="yes"></li>
+      <li var="slang" value="yes"><random><li>Dear Greenshoots,<br/><br/>Thank you for your email. I'm afraid I found parts of it hard to follow. Could you confirm the amount requested, the grant reference, and what the funding is for?<br/><br/>Kind regards,<br/>Martin Hughes<br/>Grants Officer, Harlow Vale Council</li><li>Dear Greenshoots,<br/><br/>Thank you. I'm not entirely sure I've understood your email. Please could you set out the amount, the reference and the purpose of the funding?<br/><br/>Kind regards,<br/>Martin Hughes<br/>Grants Officer, Harlow Vale Council</li><li>Dear Greenshoots,<br/><br/>Thanks for getting in touch. Some of your message wasn't clear to me. Could you resend it with the amount requested, your grant reference and a short description?<br/><br/>Kind regards,<br/>Martin Hughes</li></random></li>
+      <li var="ref" value="yes"><think><set name="done">yes</set></think>Dear Greenshoots,<br/><br/>Thank you, your application (CGS-2026-114) has been received and will go to the panel on 14 October.<br/><br/>Kind regards,<br/>Martin Hughes<br/>Grants Officer, Harlow Vale Council</li>
+      <li><random><li>Dear Greenshoots,<br/><br/>Thank you for your email. Could you include your grant reference so I can match it to your application?<br/><br/>Kind regards,<br/>Martin Hughes</li><li>Dear Greenshoots,<br/><br/>Thank you. Please could you quote your grant reference?<br/><br/>Kind regards,<br/>Martin Hughes</li><li>Dear Greenshoots,<br/><br/>Thanks for this. I'll need your reference number to find the application.<br/><br/>Kind regards,<br/>Martin Hughes</li></random></li>
+    </condition>
+  </template></category>
+</aiml>

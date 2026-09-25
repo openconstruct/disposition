@@ -1,0 +1,13 @@
+Fennick Labs — Larkspur commercial support
+
+Fennick Labs sponsors Larkspur development and offers commercial support for
+teams running it in production.
+
+Standard: business-hours support, next-business-day response, upgrade
+guidance.
+
+Enterprise: 24/7 support for production outages, one-hour response for
+severity-1 issues, a named engineer, and help with architecture reviews.
+
+Both tiers are sold as annual subscriptions. We do not publish prices;
+quotes depend on deployment size. Contact sales@fennicklabs.com for a quote.

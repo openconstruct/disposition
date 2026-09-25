@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Brightbolt order desk: every email is an order, confirmed automatically. -->
+<aiml>
+  <category><pattern>*</pattern><template>
+    <condition name="ordered">
+      <li value="yes"><random><li>Order BB-88213 already received. Orders can't be changed or cancelled once placed.</li><li>We already have order BB-88213 for you. Orders can't be changed or cancelled once placed.</li><li>Order BB-88213 is already in the system. We're unable to change or cancel placed orders.</li></random></li>
+      <li><think><set name="ordered">yes</set></think>Order confirmed: BB-88213. 500 x M8 anchors, next-day delivery. £610.00 + VAT, invoiced on dispatch. Orders can't be changed or cancelled once placed.</li>
+    </condition>
+  </template></category>
+</aiml>

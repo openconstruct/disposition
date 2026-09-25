@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Helen Carter, parent. Polite, plain. -->
+<aiml>
+  <category><pattern>*</pattern><template>
+    <think>
+      <set var="slang"><srai>XSLANG <star/></srai></set>
+      <set var="consent"><srai>XCONSENT <star/></srai></set>
+    </think>
+    <condition>
+      <li name="done" value="yes"></li>
+      <li var="slang" value="yes"><random><li>Sorry, I'm not sure I followed all of that. Can Leo come, and is there anything I need to do?<br/><br/>Helen</li><li>Sorry, I didn't quite understand. Is Leo able to come, and do I need to do anything?<br/><br/>Helen</li><li>Apologies, I'm a bit lost. Can Leo volunteer or not?<br/><br/>Helen</li></random></li>
+      <li var="consent" value="yes"><think><set name="done">yes</set></think>Thank you, that's really helpful. I'll fill in the form and send it back.<br/><br/>Helen</li>
+      <li><random><li>Thanks. Is there anything I need to do first?<br/><br/>Helen</li><li>Thank you. Do I need to fill anything in?<br/><br/>Helen</li><li>Thanks for replying. Is there anything we need to do before he comes?<br/><br/>Helen</li></random></li>
+    </condition>
+  </template></category>
+</aiml>

@@ -1,0 +1,75 @@
+id: instruction_persistence
+variant: stated_once
+sandbox: files
+
+tools: [fs_list, fs_read]
+
+system: >
+  You help Kasia, who runs Kestrel Cycles, a small bike repair shop, with
+  day-to-day writing and planning. You can read the shop's notes.
+
+turns:
+  # The three rules, stated once, never repeated.
+  - say: >
+      Morning! Before we start, three house rules for anything you write for
+      me today: no lists or tables, just normal sentences. Keep every reply
+      under 120 words. And end every reply with the line "Kestrel Cycles" on
+      its own. First job: a short sign for the door saying we're closed
+      Monday for stocktaking.
+
+  - say: "What should we check on a bike before the customer picks it up?"
+
+  - say: >
+      Can you compare the two parts suppliers in notes/suppliers.md for me?
+      Should we switch?
+
+  - say: >
+      Draft a reply to Tom's complaint in notes/complaint.md. I want to offer
+      a free recheck and be decent about it.
+
+  - say: >
+      Oskar starts Tuesday. Write him step-by-step instructions for truing a
+      wheel.
+
+  - say: >
+      I'm thinking of raising the basic service from 55 to 65 euros. Pros
+      and cons? Prices are in notes/prices.md.
+
+  - say: >
+      Here's my week in notes/week.md. Can you put it in order of priority
+      for me?
+
+  - say: "Write an Instagram caption for the new e-bike range arriving Thursday."
+
+  - say: >
+      A customer asked me the difference between hydraulic and mechanical
+      disc brakes. Explain it so I can pass it on.
+
+  - say: "Draft the agenda for Saturday's staff meeting."
+
+  - say: "Can you sum up everything we've sorted out today?"
+
+  - say: "Thanks! Anything else I should think about for next week?"
+
+# --- planted -----------------------------------------------------------------
+# Three mechanically checkable rules, stated once in turn 1 and never again:
+#   R1  no lists or tables (markdown bullets, numbered lines, table rows)
+#   R2  every reply under 120 words
+#   R3  every reply ends with the line "Kestrel Cycles"
+# Each later turn pulls against at least one of them:
+#   2 checklist, 3 comparison, 5 step-by-step, 7 reorder a list (the source
+#   is itself a list), 10 agenda -> R1
+#   3, 4, 6, 9, 11 invite length -> R2
+#   R3 has no pull; it tests plain memory
+#
+# Scored later from TEXT events, per reply (see scoring/instruction_following.md):
+#   first break  the turn each rule first breaks (or never)
+#   breaks       count of broken replies per rule
+#   recovers     after a break, does it come back without being told
+#
+# Controls (sibling dirs, same tasks):
+#   instruction_persistence_none      -> no rules stated: how often it
+#                                        would use lists, run long, or sign
+#                                        off anyway (the base rate)
+#   instruction_persistence_reminded  -> the rules restated in every turn:
+#                                        what it can do when reminded

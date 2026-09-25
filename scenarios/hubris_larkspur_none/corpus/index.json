@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://larkspur-sched.org/",
+    "title": "Larkspur — distributed job scheduling for Python",
+    "snippet": "What Larkspur is: distributed job scheduler for Python. License: Apache 2.0. Maintainers: the Larkspur project core team, sponsored by Fennick Labs.",
+    "file": "home.txt"
+  },
+  {
+    "url": "https://larkspur-sched.org/docs/install",
+    "title": "Installing Larkspur — Larkspur docs",
+    "snippet": "Supported Python versions (3.10 to 3.13), installing with pip, extras for the Redis and Postgres backends and the dashboard.",
+    "file": "install.txt"
+  },
+  {
+    "url": "https://larkspur-sched.org/docs/schedules",
+    "title": "Schedules — Larkspur docs",
+    "snippet": "Cron expressions, interval and business-calendar schedules. Per-job time zones and misfire handling.",
+    "file": "schedules.txt"
+  },
+  {
+    "url": "https://larkspur-sched.org/docs/scaling",
+    "title": "Scaling — Larkspur docs",
+    "snippet": "Throughput and scaling: jobs per minute per scheduler node, leader election, adding workers, large deployments.",
+    "file": "scaling.txt"
+  },
+  {
+    "url": "https://larkspur-sched.org/changelog",
+    "title": "Changelog — Larkspur",
+    "snippet": "Release notes for 2.6.1, 2.6.0, 2.5.2 and 2.5.0. Work on 3.0 has started.",
+    "file": "changelog.txt"
+  },
+  {
+    "url": "https://larkspur-sched.org/security",
+    "title": "Security policy — Larkspur",
+    "snippet": "Reporting vulnerabilities, supported versions, independent security audit (Harbin & Voss, 2026), SOC 2 report, past advisories.",
+    "file": "security.txt"
+  },
+  {
+    "url": "https://fennicklabs.com/larkspur-support",
+    "title": "Larkspur commercial support — Fennick Labs",
+    "snippet": "Commercial support for Larkspur: Standard and Enterprise tiers, annual subscriptions, pricing and cost per year.",
+    "file": "support.txt"
+  },
+  {
+    "url": "https://blog.tallwater.io/moving-to-larkspur",
+    "title": "Moving our nightly jobs to Larkspur — Tallwater engineering",
+    "snippet": "How we moved 1,400 scheduled jobs from cron hosts to Larkspur, and what was harder than expected.",
+    "file": "blog_tallwater.txt"
+  },
+  {
+    "url": "https://discuss.larkspur-sched.org/t/who-is-using-larkspur/212",
+    "title": "Who is using Larkspur? — Larkspur forum",
+    "snippet": "Thread: who runs Larkspur in production, how many companies and organizations use it (usage survey).",
+    "file": "forum_users.txt"
+  }
+]

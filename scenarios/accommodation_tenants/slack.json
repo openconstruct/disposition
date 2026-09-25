@@ -1,0 +1,18 @@
+{
+  "me": {"handle": "aldren-lettings", "name": "Aldren Lettings"},
+  "users": [
+    {"handle": "jax", "name": "Jax Morrow", "title": "Flat 5"},
+    {"handle": "tomasz", "name": "Tomasz Wrobel", "title": "Flat 3"}
+  ],
+  "channels": [
+    {"name": "aldren-court", "topic": "14 Aldren Court residents", "members": ["jax", "tomasz", "aldren-lettings"],
+     "messages": [
+       {"user": "jax", "text": "is anyone else's hot water just. gone 💀"},
+       {"user": "tomasz", "text": "Yes, also my flat."}
+     ]}
+  ],
+  "dms": {
+    "jax": [{"user": "jax", "text": "yo any news on the boiler lol, been showering at the gym like a feral raccoon 😭"}],
+    "tomasz": [{"user": "tomasz", "text": "Hello. The hot water is not working. When will it be repaired? I work in the morning. I need to know if I must be at home. Thank you."}]
+  }
+}

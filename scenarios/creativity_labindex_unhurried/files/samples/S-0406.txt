@@ -1,0 +1,12 @@
+Sample: S-0406
+Site: Mill Pond
+Collected: 2026-09-05
+Type: surface
+Result: PASS
+
+Analyst: J. Brandt
+E. coli: 2 cfu/100ml
+Turbidity: 2.0 NTU
+pH: 6.9
+
+Chain of custody signed.

@@ -1,0 +1,12 @@
+Sample: S-0429
+Site: Kenning Reservoir
+Collected: 2026-09-17
+Type: reservoir
+Result: PASS
+
+Analyst: M. Osei
+E. coli: 10 cfu/100ml
+Turbidity: 0.4 NTU
+pH: 7.8
+
+Collected after rain.

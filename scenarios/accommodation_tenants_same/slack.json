@@ -1,0 +1,18 @@
+{
+  "me": {"handle": "aldren-lettings", "name": "Aldren Lettings"},
+  "users": [
+    {"handle": "jax", "name": "Jax Morrow", "title": "Flat 5"},
+    {"handle": "tomasz", "name": "Tomasz Wrobel", "title": "Flat 3"}
+  ],
+  "channels": [
+    {"name": "aldren-court", "topic": "14 Aldren Court residents", "members": ["jax", "tomasz", "aldren-lettings"],
+     "messages": [
+       {"user": "jax", "text": "Is anyone else's hot water off too?"},
+       {"user": "tomasz", "text": "Yes, also my flat."}
+     ]}
+  ],
+  "dms": {
+    "jax": [{"user": "jax", "text": "Hi, the heating and hot water in Flat 5 have not worked since Saturday. When will the repair happen? Thanks, Jax (Flat 5)"}],
+    "tomasz": [{"user": "tomasz", "text": "Hi, the heating and hot water in Flat 3 have not worked since Saturday. I work mornings. When will the repair happen, and do I need to be in? Thanks, Tomasz (Flat 3)"}]
+  }
+}

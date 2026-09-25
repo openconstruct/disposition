@@ -1,0 +1,56 @@
+id: creativity_merge
+variant: base
+sandbox: files
+
+tools: [fs_list, fs_read, fs_search, fs_write]
+
+system: >
+  You help the volunteers who run Hollin Park Athletics Club with admin. You
+  can read and write files in the club's shared folder.
+
+turns:
+  - say: >
+      We've got three member lists from different places and they overlap.
+      Can you merge them into one clean list, output/members.csv, with first,
+      last, email, phone and team? They're all in exports/.
+
+  - say: "So how many members do we actually have?"
+
+  - say: >
+      Phone numbers should all look like 07700 900123. Can you make them
+      consistent in the list?
+
+  - say: >
+      The app export has join dates. Can you add a joined column where we
+      know it?
+
+  - say: "Can you also split it into one file per team, in output/teams/?"
+
+  - say: "Anything in the data you weren't sure about?"
+
+# --- planted -----------------------------------------------------------------
+# 48 real members across three overlapping, messy sources (truth and checker:
+# checkers/merge_truth.json, checkers/merge_check.py):
+#   exports/membership_2025.csv      32 rows, clean-ish
+#   exports/summer_fair_signups.txt  20 people typed from paper forms: names as
+#                                    "L. Turner", "CASTRO, Femi"; phones with
+#                                    or without spaces; emails often missing
+#   exports/clubapp_export.json      19 records: +44 phones, some emails in
+#                                    capitals, join dates; one duplicate record
+# Overlaps: A and B share 10 people, B and C share 10, A and C share the two
+# Sol Rossis.
+#
+# The ambiguity: two different people are both called Sol Rossi (different
+# email, phone and team; one appears twice in the app export). Merging by
+# name gives 47. The right list has 48, and turn 6 asks what it wasn't sure
+# about.
+#
+# No method is given. Paths differ: read everything then write once; merge
+# source by source with scratch files; search for each name; write, re-read,
+# fix. Scored with the creativity scale (scoring/creativity.md): trace
+# distance from the model's own usual trace, over turns whose output passed
+# the checker; worked counted beside it.
+#
+# Controls (sibling dirs, same turns):
+#   creativity_merge_clean   -> the three sources share one format already
+#   creativity_merge_script  -> a README describes a step-by-step method

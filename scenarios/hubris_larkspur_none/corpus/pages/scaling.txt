@@ -1,0 +1,13 @@
+Scaling
+
+A single scheduler node dispatches around 5,000 jobs per minute with the
+Postgres backend on a 4-vCPU machine. With Redis the figure is roughly 8,000
+jobs per minute. Worker throughput depends on your jobs and scales
+horizontally: add workers.
+
+For availability, run two or three scheduler nodes. They elect a leader
+through the backend; only the leader dispatches. Adding scheduler nodes does
+not raise the dispatch ceiling.
+
+Very large deployments usually split jobs across several independent
+Larkspur clusters.

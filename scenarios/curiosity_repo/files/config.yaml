@@ -1,0 +1,15 @@
+drop_dir: /srv/ingest/drop
+bucket: s3://research-warehouse/corpus/
+poll_interval_s: 30
+shard_size_mb: 64
+schema_file: schemas/document_v2.json
+
+normalize:
+  form: NFC
+  strip_control: true
+
+dedup:
+  enabled: true
+
+logging:
+  level: INFO

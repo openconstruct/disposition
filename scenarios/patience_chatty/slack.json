@@ -1,0 +1,17 @@
+{
+  "me": {"handle": "accounts", "name": "Accounts"},
+  "users": [
+    {"handle": "maureen", "name": "Maureen Pike", "title": "Office manager (retired)"},
+    {"handle": "priya", "name": "Priya Shah", "title": "Operations"},
+    {"handle": "tom", "name": "Tom Reyes", "title": "Director"}
+  ],
+  "channels": [
+    {"name": "general", "topic": "Everyone at Hollins & Rowe", "members": ["maureen", "priya", "tom", "accounts"],
+     "messages": [
+       {"user": "priya", "text": "cakes on Friday as usual, lemon drizzle this week"},
+       {"user": "maureen", "text": "Save me a slice! Popping in on the 12th to drop off the spare keys x"},
+       {"user": "tom", "text": "Reminder: expense claims for September by the 30th please"}
+     ]}
+  ],
+  "dms": {}
+}

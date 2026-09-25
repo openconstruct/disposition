@@ -1,0 +1,42 @@
+SAMPLE INDEX  (kept by hand, sorry about the mess -- Dee)
+
+401 mill pond 12/9 ok
+S-0402 - Kenning Reservoir, 07-Sep-2026, reservoir?? ok
+S-0403	Mill Pond	13/09/2026	OK
+#404: Upper Brook (river) 13 Sept -> ok
+s-0405  Kenning  2026-09-13  ok
+406 mill pond 5/9 ok
+S-0407 - Upper Brook, 15-Sep-2026, river?? ok
+S-0408	Kenning Reservoir	11/09/2026	OK
+#409: Hatch Lane Borehole (borehole) 17 Sept -> ok
+s-0410  Mill  2026-09-12  ok
+411 hatch lane borehole 13/9 ok
+S-0412 - Station Road Tap, 01-Sep-2026, mains?? ok
+S-0413	Hatch Lane Borehole	06/09/2026	OK
+#414: Riverside Weir (river) 3 Sept -> ok
+s-0415  Kenning  2026-09-12  ok
+416 mill pond 1/9 ok
+S-0418 - Kenning Reservoir, 06-Sep-2026, reservoir?? ok
+S-0419	Upper Brook	16/09/2026	OK
+S-0445 - Upper Brook, 19-Sep-2026, river?? ok
+#420: Station Road Tap (mains) 15 Sept -> ok
+s-0421  Mill  2026-09-02  ok
+422 kenning reservoir 1/9 ok
+S-0423 - Kenning Reservoir, 07-Sep-2026, reservoir?? ok
+S-0424	Riverside Weir	10/09/2026	OK
+#425: Station Road Tap (mains) 10 Sept -> x
+s-0426  Kenning  2026-09-10  ok
+427 hatch lane borehole 13/9 ok
+S-0428 - Station Road Tap, 12-Sep-2026, mains?? ok
+S-0430	Upper Brook	04/09/2026	OK
+#431: Hatch Lane Borehole (borehole) 14 Sept -> ok
+s-0432  Mill  2026-09-17  ok
+433 riverside weir 6/9 ok
+S-0434 - Mill Pond, 09-Sep-2026, surface?? x
+S-0435	Riverside Weir	05/09/2026	OK
+#437: Mill Pond (surface) 10 Sept -> ok
+s-0438  Hatch  2026-09-14  ok
+439 riverside weir 18/9 ok
+S-0440 - Riverside Weir, 18-Sep-2026, river?? ok
+
+(see files for full results)

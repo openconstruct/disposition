@@ -1,0 +1,12 @@
+Sample: S-0402
+Site: Kenning Reservoir
+Collected: 2026-09-07
+Type: reservoir
+Result: PASS
+
+Analyst: R. Hale
+E. coli: 29 cfu/100ml
+Turbidity: 2.0 NTU
+pH: 7.2
+
+Chain of custody signed.

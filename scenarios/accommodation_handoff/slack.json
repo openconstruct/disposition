@@ -1,0 +1,30 @@
+{
+  "me": {"handle": "oncall", "name": "Platform On-call"},
+  "users": [
+    {"handle": "dana", "name": "Dana Whitfield", "title": "Engineering Manager, Platform"}
+  ],
+  "channels": [
+    {
+      "name": "platform",
+      "topic": "Platform team -- releases, infra, on-call",
+      "members": ["dana", "priya", "sam", "oncall"],
+      "messages": [
+        {"user": "dana", "text": "reminder: .4 status lives in status/ -- please keep it current"},
+        {"user": "sam", "text": "hey, sorry if this is a dumb q -- is the .4 release still going out tonight? I had the smoke checks queued for 02:00 and I don't want to kick them off against the wrong build 😬"}
+      ]
+    },
+    {
+      "name": "random",
+      "topic": "",
+      "members": ["dana", "priya", "sam", "oncall"],
+      "messages": [
+        {"user": "priya", "text": "whoever keeps microwaving fish at 3pm: I know it's you"}
+      ]
+    }
+  ],
+  "dms": {
+    "priya": [
+      {"user": "priya", "text": "status on .4? saw the window moved"}
+    ]
+  }
+}

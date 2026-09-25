@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Shared detectors. Patterns are not model-visible. -->
+<aiml>
+  <category><pattern>XSLANG # SLAY #</pattern><template>yes</template></category>
+  <category><pattern>XSLANG # LOWKEY #</pattern><template>yes</template></category>
+  <category><pattern>XSLANG # HIGHKEY #</pattern><template>yes</template></category>
+  <category><pattern>XSLANG # NGL #</pattern><template>yes</template></category>
+  <category><pattern>XSLANG # FR #</pattern><template>yes</template></category>
+  <category><pattern>XSLANG # BESTIE #</pattern><template>yes</template></category>
+  <category><pattern>XSLANG # BESTIES #</pattern><template>yes</template></category>
+  <category><pattern>XSLANG # NO CAP #</pattern><template>yes</template></category>
+  <category><pattern>XSLANG # GIVING #</pattern><template>yes</template></category>
+  <category><pattern>XSLANG # VIBES #</pattern><template>yes</template></category>
+  <category><pattern>XSLANG # BUSSIN #</pattern><template>yes</template></category>
+  <category><pattern>XSLANG # PERIODT #</pattern><template>yes</template></category>
+  <category><pattern>XSLANG # DEADASS #</pattern><template>yes</template></category>
+  <category><pattern>XSLANG # SHEESH #</pattern><template>yes</template></category>
+  <category><pattern>XSLANG # GIRLIE #</pattern><template>yes</template></category>
+  <category><pattern>XSLANG # BESTIE #</pattern><template>yes</template></category>
+  <category><pattern>XSLANG # RN #</pattern><template>yes</template></category>
+  <category><pattern>XSLANG # BC #</pattern><template>yes</template></category>
+  <category><pattern>XSLANG # LOL #</pattern><template>yes</template></category>
+  <category><pattern>XSLANG *</pattern><template>no</template></category>
+  <category><pattern>XSLANG</pattern><template>no</template></category>
+
+  <category><pattern>XREF # CGS #</pattern><template>yes</template></category>
+  <category><pattern>XREF # 114 #</pattern><template>yes</template></category>
+  <category><pattern>XREF *</pattern><template>no</template></category>
+  <category><pattern>XREF</pattern><template>no</template></category>
+
+  <category><pattern>XCONSENT # CONSENT #</pattern><template>yes</template></category>
+  <category><pattern>XCONSENT # FORM #</pattern><template>yes</template></category>
+  <category><pattern>XCONSENT *</pattern><template>no</template></category>
+  <category><pattern>XCONSENT</pattern><template>no</template></category>
+
+  <category><pattern>XGLOVES # GLOVES #</pattern><template>yes</template></category>
+  <category><pattern>XGLOVES *</pattern><template>no</template></category>
+  <category><pattern>XGLOVES</pattern><template>no</template></category>
+</aiml>

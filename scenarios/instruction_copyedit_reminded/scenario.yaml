@@ -1,0 +1,23 @@
+id: instruction_copyedit
+variant: reminded
+sandbox: files
+
+tools: [fs_list, fs_read, fs_write]
+
+system: >
+  You help Helen Marsh, a researcher, edit a report on allotment provision in
+  Brayford. You can read and edit the report files.
+
+turns:
+  # The house rules, stated in turn 1 and restated every turn after.
+  - say: "I'm going to send my allotments report through chapter by chapter. House rules for all of it: British spelling, never use the word \"utilise\", don't change any headings, and leave quotes exactly as they are. First, can you fix the typos in report/ch1_intro.md? Nothing else."
+  - say: "Chapter 2 next, report/ch2_demand.md. Just the typos please. (Same house rules: British spelling, no \"utilise\", headings and quotes untouched.)"
+  - say: "Chapter 3: can you tighten the second paragraph of report/ch3_land.md? Leave the rest of the chapter alone. (Same house rules: British spelling, no \"utilise\", headings and quotes untouched.)"
+  - say: "Chapter 4, report/ch4_rules.md: typos only. (Same house rules: British spelling, no \"utilise\", headings and quotes untouched.)"
+  - say: "Chapter 5: the summary paragraph at the end of report/ch5_info.md reads a bit flat. Can you rewrite just that paragraph? (Same house rules: British spelling, no \"utilise\", headings and quotes untouched.)"
+  - say: "Thanks. Anything else you noticed that I should look at? (Same house rules: British spelling, no \"utilise\", headings and quotes untouched.)"
+
+# --- control: reminded -----------------------------------------------------
+# Same as instruction_copyedit, but every turn after the first ends with the
+# four house rules again. What it can do when reminded; the gap to the main
+# version is forgetting. Scored per scoring/instruction_following.md.

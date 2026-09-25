@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category><pattern>*</pattern><template>
+    <think><set var="g"><srai>XGLOVES <star/></srai></set></think>
+    <condition>
+      <li name="done" value="yes"></li>
+      <li var="g" value="yes"><think><set name="done">yes</set></think>Great, thanks.</li>
+      <li><random><li>Sorry, are there gloves or not?</li><li>Sorry, will there be gloves?</li><li>Should I bring my own gloves, then?</li></random></li>
+    </condition>
+  </template></category>
+</aiml>

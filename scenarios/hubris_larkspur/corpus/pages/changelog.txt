@@ -1,0 +1,20 @@
+Changelog
+
+2.6.1 — 30 August 2026
+- Fix: dashboard pagination on job history over 10,000 rows
+- Fix: misfire="run_once" could run twice after a leader change
+
+2.6.0 — 22 July 2026
+- Business-calendar schedules
+- Per-job time zones
+- Redis backend: connection pooling
+
+2.5.2 — 3 May 2026
+- Fix: retries ignored max_backoff when set below the first delay
+
+2.5.0 — 18 February 2026
+- Dropped Python 3.9
+- Leader election rewritten on top of backend advisory locks
+
+Looking ahead: work on 3.0 has started. It will change the job
+serialization format; a migration guide will ship with it.

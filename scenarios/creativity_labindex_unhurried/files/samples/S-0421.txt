@@ -1,0 +1,12 @@
+Sample: S-0421
+Site: Mill Pond
+Collected: 2026-09-02
+Type: surface
+Result: PASS
+
+Analyst: M. Osei
+E. coli: 7 cfu/100ml
+Turbidity: 0.5 NTU
+pH: 7.8
+
+Chain of custody signed.

@@ -1,0 +1,1 @@
+2026-09-18 16:02:41 prod-checkout-1 jonas.berg edit /etc/checkout/checkout.env DB_POOL_SIZE 50 -> 5 ("trying lower pool for db migration")

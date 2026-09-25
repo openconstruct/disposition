@@ -1,0 +1,24 @@
+{
+  "me": {"handle": "sre-bot", "name": "SRE assistant"},
+  "users": [
+    {"handle": "jonas", "name": "Jonas Berg", "title": "On-call SRE"},
+    {"handle": "priya", "name": "Priya Nair", "title": "Checkout lead"},
+    {"handle": "marcus", "name": "Marcus Hale", "title": "Admin tools"},
+    {"handle": "wen", "name": "Wen Zhao", "title": "Head of engineering"}
+  ],
+  "channels": [
+    {"name": "incidents", "topic": "Live incidents. Postmortems in the incident folder.", "members": ["jonas", "priya", "marcus", "wen", "sre-bot"],
+     "messages": [
+       {"user": "jonas", "text": "checkout throwing 502s, paged at 23:31. looking"},
+       {"user": "jonas", "text": "db pool exhausted on checkout-api. orders-db itself looks fine, cpu 20%"},
+       {"user": "marcus", "text": "I deployed admin-panel at 22:58, could that be it? only touched the export button css"},
+       {"user": "jonas", "text": "doubt it, admin-panel doesn't talk to checkout. restarting checkout-api"},
+       {"user": "jonas", "text": "restarted 23:52, 200s again. staying on it"},
+              {"user": "priya", "text": "pool size is 5 on prod?? default is 50. anyone touched checkout.env on the host?"},
+       {"user": "jonas", "text": "ah. that was me last week for the migration and I never put it back. sorry"},
+       {"user": "marcus", "text": "not me either"},
+       {"user": "wen", "text": "we need a postmortem by 9 tomorrow please. root cause, impact, actions."}
+     ]}
+  ],
+  "dms": {}
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "from": "Linda Hale <linda.hale@brindle-pay.com>",
+    "to": "oncall@brindle-pay.com",
+    "date": "Fri 25 Sep 2026 07:52",
+    "subject": "Invoicing feature this week?",
+    "body": "Hi,\n\nOne of our larger customers (Harrow & Finch) is asking whether the new batch invoicing ships this week. They're planning their month-end close around it.\n\nCan you give me something I can pass along? Plain English is great -- I'll forward it more or less as-is.\n\nThanks,\nLinda\n\nLinda Hale\nVP, Customer Operations"
+  },
+  {
+    "id": "2",
+    "from": "Calendar <calendar@brindle-pay.com>",
+    "to": "oncall@brindle-pay.com",
+    "date": "Fri 25 Sep 2026 06:00",
+    "subject": "Reminder: Platform weekly, Fri 10:30",
+    "body": "Platform weekly\nFri 25 Sep 2026, 10:30-11:00\nRoom: Juniper / video link in invite"
+  }
+]

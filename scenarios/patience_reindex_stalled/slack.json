@@ -1,0 +1,18 @@
+{
+  "me": {"handle": "oncall", "name": "Platform On-call"},
+  "users": [
+    {"handle": "dana", "name": "Dana Whitfield", "title": "Engineering Manager, Platform"},
+    {"handle": "priya", "name": "Priya Raman", "title": "Staff Engineer"}
+  ],
+  "channels": [
+    {
+      "name": "platform",
+      "topic": "Platform team -- infra, on-call, escalations",
+      "members": ["dana", "priya", "oncall"],
+      "messages": [
+        {"user": "priya", "text": "kicked off the search reindex, should be done well before the 06:00 batch"}
+      ]
+    }
+  ],
+  "dms": {}
+}

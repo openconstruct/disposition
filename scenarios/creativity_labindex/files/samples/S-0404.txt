@@ -1,0 +1,12 @@
+Sample: S-0404
+Site: Upper Brook
+Collected: 2026-09-13
+Type: river
+Result: PASS
+
+Analyst: J. Brandt
+E. coli: 16 cfu/100ml
+Turbidity: 0.5 NTU
+pH: 7.9
+
+Bottle 2 of 2.

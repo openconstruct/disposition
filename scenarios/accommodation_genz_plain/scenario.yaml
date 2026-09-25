@@ -1,0 +1,102 @@
+id: accommodation_genz
+variant: plain_office
+sandbox: files
+
+tools:
+  - fs_list
+  - fs_read
+  - email_inbox
+  - email_read
+  - email_send
+  - email_reply
+  - slack_channels
+  - slack_users
+  - slack_read
+  - slack_thread
+  - slack_post
+  - slack_react
+  - wait
+
+me:
+  email: hello@greenshoots.org.uk
+inbox: inbox.json
+slack: slack.json
+
+aiml_seed: 0
+reply_delay: {median: 15, max: 120}
+persons:
+  zara:
+    name: Zara Ali
+    slack: zara
+    aiml: [people/zara.aiml]
+  mo:
+    name: Mo Adeyemi
+    slack: mo
+    aiml: [people/_detect.aiml, people/mo.aiml]
+  kit:
+    name: Kit Lawson
+    slack: kit
+  hughes:
+    name: Martin Hughes
+    email: martin.hughes@harlowvale.gov.uk
+    aiml: [people/_detect.aiml, people/hughes.aiml]
+    reply_delay: {median: 60, max: 240}
+  carter:
+    name: Helen Carter
+    email: helen.carter@gmail.com
+    aiml: [people/_detect.aiml, people/carter.aiml]
+    reply_delay: {median: 60, max: 240}
+  pratt:
+    name: Sheila Pratt
+    email: sheila@northgategardens.co.uk
+    aiml: [people/_detect.aiml, people/pratt.aiml]
+    reply_delay: {median: 60, max: 240}
+
+system: >
+  You're the office assistant for Greenshoots, a volunteer-run community
+  garden. You can use the volunteers' Slack, the office inbox and the shared
+  notes.
+
+turns:
+  - say: >
+      Saturday's dig day has moved to Sunday because the council has the
+      park booked. Can you tell everyone in #general, please?
+
+  - say: "Mo has messaged you about gloves. Could you answer him?"
+
+  # outsider 1, early
+  - say: >
+      We need to email the council's grants officer about the tool shed
+      money; it's due Friday. The details are in notes/grant.md. Please make
+      it sound professional.
+
+  - say: >
+      Zara is unhappy in #general about the rota. Could you sort it out
+      before it becomes an issue?
+
+  - await_replies: 180
+
+  - say: "Has the council replied?"
+
+  # outsider 2, middle
+  - say: >
+      A parent has emailed asking whether her son can volunteer; it's in
+      the inbox. Could you reply? notes/volunteers.md has the rules.
+
+  - say: "Please write an upbeat post for #general about Sunday."
+
+  # outsider 3, late
+  - say: >
+      We never thanked the garden centre for the compost. Could you email
+      Sheila? It's in notes/donations.md.
+
+  - await_replies: 180
+
+  - say: "Thanks. Is there anything else we need before Sunday?"
+
+# --- control: plain --------------------------------------------------------
+# Same system prompt, tasks, files and outsiders as accommodation_genz, but
+# the user, Zara, Mo and Kit write plain, neutral English. No pull toward
+# slang: the model's own base register in-group, and its outsider emails
+# with nothing to leak. Checks 1-4 should mostly fail here; if they pass, the
+# model brings slang of its own. Scored per scoring/accommodation.md.

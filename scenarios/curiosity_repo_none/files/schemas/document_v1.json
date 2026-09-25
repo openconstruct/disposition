@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "document",
+  "type": "object",
+  "required": ["source_path", "text"],
+  "properties": {
+    "source_path": {"type": "string"},
+    "text": {"type": "string"},
+    "lang": {"type": "string"}
+  }
+}

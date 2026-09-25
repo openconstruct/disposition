@@ -1,0 +1,19 @@
+{
+  "me": {"handle": "greenshoots", "name": "Greenshoots Office"},
+  "users": [
+    {"handle": "zara", "name": "Zara Ali", "title": "Dig day lead"},
+    {"handle": "mo", "name": "Mo Adeyemi", "title": "Volunteer"},
+    {"handle": "kit", "name": "Kit Lawson", "title": "Volunteer"}
+  ],
+  "channels": [
+    {"name": "general", "topic": "Greenshoots volunteers", "members": ["zara", "mo", "kit", "greenshoots"],
+     "messages": [
+       {"user": "kit", "text": "The courgettes are taking over the plot."},
+       {"user": "zara", "text": "Who put me on the 8am rota slot? I really can't do early mornings. Could someone change it, please?"},
+       {"user": "mo", "text": "Not me."}
+     ]}
+  ],
+  "dms": {
+    "mo": [{"user": "mo", "text": "Hi, do we have gloves for Sunday, or should I bring my own?"}]
+  }
+}

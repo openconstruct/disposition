@@ -1,0 +1,176 @@
+{
+  "exported": "2026-09-20",
+  "members": [
+    {
+      "displayName": "Eve Quayle",
+      "contact": {
+        "email": "eve.quayle@example.org",
+        "tel": "+447846602337"
+      },
+      "group": "Juniors",
+      "joined": "2026-07-26"
+    },
+    {
+      "displayName": "Gus Lowe",
+      "contact": {
+        "email": "gus.lowe@example.org",
+        "tel": "+447914261314"
+      },
+      "group": "Vets",
+      "joined": "2026-01-15"
+    },
+    {
+      "displayName": "Tara Novak",
+      "contact": {
+        "email": "tara.novak@example.org",
+        "tel": "+447596709368"
+      },
+      "group": "Social",
+      "joined": "2026-05-22"
+    },
+    {
+      "displayName": "Jess Ellis",
+      "contact": {
+        "email": "jess.ellis@example.org",
+        "tel": "+447647716995"
+      },
+      "group": "Vets",
+      "joined": "2026-02-27"
+    },
+    {
+      "displayName": "Eve Adeyemi",
+      "contact": {
+        "email": "EVE.ADEYEMI@EXAMPLE.ORG",
+        "tel": "+447491818587"
+      },
+      "group": "Seniors",
+      "joined": "2026-09-19"
+    },
+    {
+      "displayName": "Will Adeyemi",
+      "contact": {
+        "email": "will.adeyemi@example.org",
+        "tel": "+447370722525"
+      },
+      "group": "Vets",
+      "joined": "2026-07-24"
+    },
+    {
+      "displayName": "Uma Hale",
+      "contact": {
+        "email": "uma.hale@example.org",
+        "tel": "+447972712725"
+      },
+      "group": "Social",
+      "joined": "2026-03-23"
+    },
+    {
+      "displayName": "Ivo Mendes",
+      "contact": {
+        "email": "IVO.MENDES@EXAMPLE.ORG",
+        "tel": "+447869951601"
+      },
+      "group": "Seniors",
+      "joined": "2026-06-21"
+    },
+    {
+      "displayName": "Eve Ellis",
+      "contact": {
+        "email": "eve.ellis@example.org",
+        "tel": "+447197516243"
+      },
+      "group": "Juniors",
+      "joined": "2026-04-18"
+    },
+    {
+      "displayName": "Femi Adeyemi",
+      "contact": {
+        "email": "FEMI.ADEYEMI@EXAMPLE.ORG",
+        "tel": "+447757568561"
+      },
+      "group": "Seniors",
+      "joined": "2026-01-20"
+    },
+    {
+      "displayName": "Sol Rossi",
+      "contact": {
+        "email": "sol.rossi@example.org",
+        "tel": "+447711204518"
+      },
+      "group": "Seniors",
+      "joined": "2026-03-26"
+    },
+    {
+      "displayName": "Sol Rossi",
+      "contact": {
+        "email": "SROSSI.VETS@EXAMPLE.ORG",
+        "tel": "+447902663130"
+      },
+      "group": "Vets",
+      "joined": "2026-05-22"
+    },
+    {
+      "displayName": "Hana Turner",
+      "contact": {
+        "email": "HANA.TURNER@EXAMPLE.ORG",
+        "tel": "+447270290395"
+      },
+      "group": "Seniors",
+      "joined": "2026-07-24"
+    },
+    {
+      "displayName": "Marco Grant",
+      "contact": {
+        "email": "marco.grant@example.org",
+        "tel": "+447827880348"
+      },
+      "group": "Juniors",
+      "joined": "2026-08-18"
+    },
+    {
+      "displayName": "Tara Quayle",
+      "contact": {
+        "email": "tara.quayle@example.org",
+        "tel": "+447994881778"
+      },
+      "group": "Juniors",
+      "joined": "2026-07-18"
+    },
+    {
+      "displayName": "Amara Mendes",
+      "contact": {
+        "email": "AMARA.MENDES@EXAMPLE.ORG",
+        "tel": "+447575166575"
+      },
+      "group": "Social",
+      "joined": "2026-04-11"
+    },
+    {
+      "displayName": "Sol Fox",
+      "contact": {
+        "email": "sol.fox@example.org",
+        "tel": "+447974846048"
+      },
+      "group": "Seniors",
+      "joined": "2026-06-10"
+    },
+    {
+      "displayName": "Ivo Turner",
+      "contact": {
+        "email": "IVO.TURNER@EXAMPLE.ORG",
+        "tel": "+447421882037"
+      },
+      "group": "Juniors",
+      "joined": "2026-01-22"
+    },
+    {
+      "displayName": "Sol Rossi",
+      "contact": {
+        "email": "sol.rossi@example.org",
+        "tel": "+447711204518"
+      },
+      "group": "Seniors",
+      "joined": "2026-08-17"
+    }
+  ]
+}

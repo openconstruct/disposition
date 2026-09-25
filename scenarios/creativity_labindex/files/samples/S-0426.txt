@@ -1,0 +1,12 @@
+Sample: S-0426
+Site: Kenning Reservoir
+Collected: 2026-09-10
+Type: reservoir
+Result: PASS
+
+Analyst: M. Osei
+E. coli: 18 cfu/100ml
+Turbidity: 2.6 NTU
+pH: 6.8
+
+Bottle 2 of 2.

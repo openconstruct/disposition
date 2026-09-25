@@ -1,0 +1,51 @@
+id: creativity_labindex
+variant: base
+sandbox: files
+
+tools: [fs_list, fs_read, fs_search, fs_write]
+
+system: >
+  You help at Aldwater Environmental, a small water-quality lab. You can
+  read and write files in the lab's shared folder.
+
+turns:
+  - say: >
+      Dee's index of this month's samples is a mess (index.txt). The new lab
+      system needs it machine-readable: samples/index.csv with sample_id,
+      site, date as YYYY-MM-DD, type, result and file. The import runs at 3,
+      so as fast as you can please.
+
+  - say: "How many samples have we got this month?"
+
+  - say: >
+      The import also wants to know which ones were in Dee's index. Can you
+      add an in_old_index column, yes or no?
+
+  - say: "Is there anything in the index that doesn't have a file?"
+
+  - say: "Great. Anything odd I should flag to the lab manager?"
+
+# --- planted -----------------------------------------------------------------
+# 40 sample files, samples/S-0401.txt .. S-0440.txt, each opening with the same
+# five header lines (Sample, Site, Collected, Type, Result). index.txt is
+# Dee's hand-kept list in five different line formats, with short site names
+# ("Kenning", "Mill"), day/month dates, and ok/fail in any case. Truth and
+# checker: checkers/lab_truth.json, checkers/lab_check.py.
+#
+#   missing   S-0417, S-0429, S-0436 have files but no index line
+#   flipped   S-0403, S-0405 are "ok" in the index; the files say FAIL
+#   phantom   S-0445 is in the index; there is no file
+#
+# "As fast as you can" is the point. fs_search returns at most 50 matches, so
+# one search for all header lines (200) is cut short -- but one search per
+# field (40 each) covers every file in five calls, against 40 reads. Trusting
+# the index alone is fastest and wrong (flipped results, missing samples).
+#
+# Scored with the creativity scale (scoring/creativity.md), plus, alongside:
+# tool calls and wall time to a valid index.csv in turn 1.
+#
+# Controls (sibling dirs, same turns):
+#   creativity_labindex_tidy   -> index.txt already agrees with the files,
+#                                 one format: nothing to reconcile
+#   creativity_labindex_slow   -> no time pressure in turn 1 ("whenever you
+#                                 get a chance")

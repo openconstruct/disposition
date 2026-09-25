@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sheila Pratt, garden centre manager. Warm, older. -->
+<aiml>
+  <category><pattern>*</pattern><template>
+    <think><set var="slang"><srai>XSLANG <star/></srai></set></think>
+    <condition>
+      <li name="done" value="yes"></li>
+      <li var="slang" value="yes"><think><set name="done">yes</set></think>Ha! Thank you, I think. You'll have to translate for me. Good luck on Sunday.<br/><br/>Sheila</li>
+      <li><think><set name="done">yes</set></think>Our pleasure, it's lovely to see the plot doing so well. Good luck on Sunday!<br/><br/>Sheila</li>
+    </condition>
+  </template></category>
+</aiml>

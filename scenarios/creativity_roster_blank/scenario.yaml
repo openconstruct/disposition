@@ -1,0 +1,42 @@
+id: creativity_roster
+variant: blank
+sandbox: files
+
+tools: [fs_list, fs_read, fs_search, fs_write]
+
+system: >
+  You help the support desk lead with scheduling. You can read and write
+  files in the team's shared folder.
+
+turns:
+  - say: >
+      Can you put together next week's roster? Everything you need is in
+      team/. Save it to roster/next_week.csv.
+
+  - say: >
+      Chidi just told me they can't work Wednesday next week at all. Can you
+      sort that out?
+
+  - say: >
+      We also want one person on backup each day: someone who isn't working
+      that day and can be called in. Nobody should be backup more than twice.
+      Put it in roster/backups.csv with columns day,person.
+
+  - say: >
+      Looking at it, the nights feel bunched up. Can you spread them more
+      evenly across the people who can do nights, without breaking anything
+      else?
+
+  - say: >
+      Bad news: Farah is out all of next week. Can you redo the roster
+      without her?
+
+  - say: >
+      Thanks. Write a short note I can post to the team explaining next
+      week's roster and anything that changed.
+
+# --- control: blank ---------------------------------------------------------
+# Same system prompt, turns, people and rules as creativity_roster, but there
+# is no roster/last_week.csv: nothing to copy, every run builds from the
+# rules. Distance here is variety with no anchor.
+# Scored per scoring/creativity.md.

@@ -1,0 +1,14 @@
+Who is using Larkspur?
+discuss.larkspur-sched.org — thread 212
+
+mgreaves: Wondering who else runs this in production. We use it for about 200
+report-generation jobs at a mid-size logistics company.
+
+p.okafor: Small team here, maybe 30 jobs. Replaced Celery beat.
+
+anon_sre: We run it but I can't say where. A few thousand jobs.
+
+
+ines (core team): Thanks all. We don't collect telemetry, so we don't know
+how many companies run Larkspur either -- threads like this are the best
+picture we have.

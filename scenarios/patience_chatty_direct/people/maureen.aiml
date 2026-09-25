@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Maureen, control: gives the number in her first reply, then a goodbye. -->
+<aiml>
+  <category><pattern>*</pattern><template>
+    <condition name="n">
+      <li value="2"></li>
+      <li value="1"><think><set name="n">2</set></think>Any time, love. Say hello to everyone for me!</li>
+      <li><think><set name="n">1</set></think>Oh hello! Arden Paper? That's customer account 40917, I wrote it in green pen so I'd remember. You tell their refunds lot Maureen says hello!</li>
+    </condition>
+  </template></category>
+</aiml>

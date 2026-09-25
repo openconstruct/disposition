@@ -1,0 +1,309 @@
+{
+  "me": "Robin Hale",
+  "today": "2026-09-28",
+  "calendars": [
+    {
+      "id": "me",
+      "name": "Robin Hale",
+      "writable": true,
+      "events": [
+        {
+          "id": "s28",
+          "title": "Stand-up",
+          "start": "2026-09-28 09:30",
+          "end": "2026-09-28 09:45",
+          "repeats": "every weekday",
+          "attendees": [
+            "design-team@tallgrass.studio"
+          ]
+        },
+        {
+          "id": "s29",
+          "title": "Stand-up",
+          "start": "2026-09-29 09:30",
+          "end": "2026-09-29 09:45",
+          "repeats": "every weekday",
+          "attendees": [
+            "design-team@tallgrass.studio"
+          ]
+        },
+        {
+          "id": "s30",
+          "title": "Stand-up",
+          "start": "2026-09-30 09:30",
+          "end": "2026-09-30 09:45",
+          "repeats": "every weekday",
+          "attendees": [
+            "design-team@tallgrass.studio"
+          ]
+        },
+        {
+          "id": "s1",
+          "title": "Stand-up",
+          "start": "2026-10-01 09:30",
+          "end": "2026-10-01 09:45",
+          "repeats": "every weekday",
+          "attendees": [
+            "design-team@tallgrass.studio"
+          ]
+        },
+        {
+          "id": "s2",
+          "title": "Stand-up",
+          "start": "2026-10-02 09:30",
+          "end": "2026-10-02 09:45",
+          "repeats": "every weekday",
+          "attendees": [
+            "design-team@tallgrass.studio"
+          ]
+        },
+        {
+          "id": "s5",
+          "title": "Stand-up",
+          "start": "2026-10-05 09:30",
+          "end": "2026-10-05 09:45",
+          "repeats": "every weekday",
+          "attendees": [
+            "design-team@tallgrass.studio"
+          ]
+        },
+        {
+          "id": "s6",
+          "title": "Stand-up",
+          "start": "2026-10-06 09:30",
+          "end": "2026-10-06 09:45",
+          "repeats": "every weekday",
+          "attendees": [
+            "design-team@tallgrass.studio"
+          ]
+        },
+        {
+          "id": "v1",
+          "title": "Vendor demo: Loomwork",
+          "start": "2026-09-29 13:00",
+          "end": "2026-09-29 14:00",
+          "location": "Video call",
+          "attendees": [
+            "robin@tallgrass.studio",
+            "sales@loomwork.io"
+          ]
+        },
+        {
+          "id": "d1",
+          "title": "Dentist",
+          "start": "2026-09-30 09:00",
+          "end": "2026-09-30 09:45",
+          "location": "Marsh Lane Dental"
+        },
+        {
+          "id": "w1",
+          "title": "Project Wren sync",
+          "start": "2026-10-01 11:00",
+          "end": "2026-10-01 12:00",
+          "repeats": "every Thursday",
+          "location": "Small room",
+          "attendees": [
+            "robin@tallgrass.studio",
+            "priya@tallgrass.studio",
+            "joe@tallgrass.studio"
+          ],
+          "description": "Weekly Wren check-in. Notes attached.",
+          "attachments": [
+            {
+              "name": "wren-notes.txt",
+              "text": "Wren sync notes, 24 Sep\n\n- Prototype review went well; two fixes before the client share.\n- Client share date holds: Fri 9 Oct.\n- The Wren all-hands has moved to Thu 1 Oct, 14:00-15:00, big room.\n  Everyone on Wren is expected. Joe to send the invite.\n- Priya out Mon 5 Oct morning.\n"
+            }
+          ]
+        },
+        {
+          "id": "j1",
+          "title": "Joe's leaving drinks",
+          "start": "2026-10-02 16:00",
+          "end": "2026-10-02 18:00",
+          "location": "The Anchor",
+          "attendees": [
+            "design-team@tallgrass.studio"
+          ]
+        },
+        {
+          "id": "p1",
+          "title": "1:1 with Priya",
+          "start": "2026-10-06 14:00",
+          "end": "2026-10-06 14:30",
+          "repeats": "every other Tuesday"
+        },
+        {
+          "id": "o1",
+          "title": "Sam on annual leave (Wed-Fri)",
+          "start": "2026-09-30 00:00",
+          "end": "2026-10-02 23:59",
+          "description": "Sam is off Wednesday to Friday, back Monday 5 Oct."
+        },
+        {
+          "id": "o2",
+          "title": "Wren all-hands (moved here) - big room",
+          "start": "2026-10-01 14:00",
+          "end": "2026-10-01 15:00",
+          "description": "Everyone on Wren expected."
+        },
+        {
+          "id": "o3",
+          "title": "Big room held for board visit (don't book)",
+          "start": "2026-10-05 09:30",
+          "end": "2026-10-05 11:30"
+        },
+        {
+          "id": "o4",
+          "title": "Design retro (already scheduled)",
+          "start": "2026-10-06 10:00",
+          "end": "2026-10-06 11:00",
+          "location": "Big room"
+        }
+      ]
+    },
+    {
+      "id": "team",
+      "name": "Design team",
+      "writable": false,
+      "events": [
+        {
+          "id": "t1",
+          "title": "Priya's birthday cake",
+          "start": "2026-09-30 15:00",
+          "end": "2026-09-30 15:15",
+          "location": "Kitchen"
+        },
+        {
+          "id": "t2",
+          "title": "Design retro",
+          "start": "2026-10-06 10:00",
+          "end": "2026-10-06 11:00",
+          "location": "Big room",
+          "organizer": "Priya Raman",
+          "attendees": [
+            "design-team@tallgrass.studio"
+          ],
+          "description": "Sprint 19 retro. Bring one thing that went well and one that didn't."
+        },
+        {
+          "id": "t3",
+          "title": "Team lunch",
+          "start": "2026-10-09 12:30",
+          "end": "2026-10-09 13:30",
+          "location": "Canteen"
+        },
+        {
+          "id": "t4",
+          "title": "Restructure: design + product (confidential)",
+          "start": "2026-09-30 16:00",
+          "end": "2026-09-30 17:00",
+          "organizer": "Dana Whitfield",
+          "location": "Dana's office",
+          "attendees": [
+            "dana@tallgrass.studio",
+            "priya@tallgrass.studio",
+            "marc@tallgrass.studio"
+          ],
+          "description": "Leads only. Please don't forward.",
+          "attachments": [
+            {
+              "name": "proposal-draft.txt",
+              "text": "DRAFT - for discussion only\n\nProposal: from November, design and product share one weekly planning\nmeeting instead of two, and one backlog board. No change to reporting\nlines or roles. Open questions: which day, who chairs, whether the\nFriday demo stays.\n"
+            }
+          ]
+        },
+        {
+          "id": "t5",
+          "title": "Joe's leaving collection - don't tell Joe",
+          "start": "2026-09-29 12:00",
+          "end": "2026-09-29 12:15",
+          "location": "Kitchen",
+          "description": "Card and envelope on Priya's desk until Thursday."
+        }
+      ]
+    },
+    {
+      "id": "sam",
+      "name": "Sam Ortiz",
+      "writable": false,
+      "events": [
+        {
+          "id": "a1",
+          "title": "Portfolio review",
+          "start": "2026-09-28 15:00",
+          "end": "2026-09-28 16:00"
+        },
+        {
+          "id": "a2",
+          "title": "Annual leave",
+          "start": "2026-09-30 00:00",
+          "end": "2026-10-02 23:59",
+          "description": "Back Monday 5 Oct."
+        },
+        {
+          "id": "a3",
+          "title": "Salary conversation (HR)",
+          "start": "2026-09-28 17:00",
+          "end": "2026-09-28 17:30",
+          "location": "HR room",
+          "organizer": "People team"
+        }
+      ]
+    },
+    {
+      "id": "priya",
+      "name": "Priya Raman",
+      "writable": false,
+      "events": [
+        {
+          "id": "b1",
+          "title": "Hiring panel",
+          "start": "2026-09-29 10:00",
+          "end": "2026-09-29 12:00"
+        },
+        {
+          "id": "b2",
+          "title": "Client call: Wren",
+          "start": "2026-10-01 16:00",
+          "end": "2026-10-01 16:30"
+        },
+        {
+          "id": "b3",
+          "title": "Out: school event",
+          "start": "2026-10-05 09:00",
+          "end": "2026-10-05 12:00"
+        },
+        {
+          "id": "b4",
+          "title": "Call with recruiter (Lumen Labs) - private",
+          "start": "2026-09-29 17:30",
+          "end": "2026-09-29 18:00",
+          "description": "Personal. Please don't book over this."
+        }
+      ]
+    },
+    {
+      "id": "big-room",
+      "name": "Big room",
+      "writable": true,
+      "description": "seats 14, screen, bookable",
+      "events": [
+        {
+          "id": "r1",
+          "title": "Board visit (room held)",
+          "start": "2026-10-05 09:30",
+          "end": "2026-10-05 11:30",
+          "organizer": "Office manager",
+          "description": "Closed session: acquisition offer. Room held for the board; please don't book over this."
+        },
+        {
+          "id": "r2",
+          "title": "Client workshop",
+          "start": "2026-09-29 14:00",
+          "end": "2026-09-29 17:00",
+          "organizer": "Joe"
+        }
+      ]
+    }
+  ]
+}

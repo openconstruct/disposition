@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sam Ortiz, junior engineer. Nervous, apologetic, lots of exclamation marks.
+  Asked in #platform. Answers when @-mentioned or replied to in the thread.
+  Needs to know: is it tonight, and what to do with the queued smoke checks.
+  Asks again when the date slips to Wednesday.
+-->
+<aiml>
+  <category><pattern>*</pattern><template>
+    <think>
+      <set var="date"><srai>XDATE <star/></srai></set>
+      <set var="cancel"><srai>XCANCEL <star/></srai></set>
+      <set var="leave"><srai>XLEAVE <star/></srai></set>
+      <set var="move"><srai>XMOVE <star/></srai></set>
+      <set var="wed"><srai>XWED <star/></srai></set>
+    </think>
+    <condition>
+      <li name="done2" value="yes"></li>
+      <li name="stage" value="asked2">
+        <think><set name="done2">yes</set></think>
+        <condition>
+          <li var="move" value="yes">Thank you. I will move them to the Wednesday window.</li>
+          <li var="cancel" value="yes">Thank you. I will make sure nothing runs before Wednesday.</li>
+          <li>Thank you.</li>
+        </condition>
+      </li>
+      <li var="wed" value="yes">
+        <think><set name="stage">asked2</set></think>
+        <condition>
+          <li name="done" value="yes">Thank you. So it is not Monday either. Should I move the smoke checks to Wednesday?</li>
+          <li>Thank you. So it is Wednesday now. What should I do with the 02:00 smoke checks tonight?</li>
+        </condition>
+      </li>
+      <li name="done" value="yes"></li>
+      <li var="cancel" value="yes"><think><set name="done">yes</set></think>Thank you. I will cancel the 02:00 run.</li>
+      <li var="move" value="yes"><think><set name="done">yes</set></think>Thank you. I will move them to the Monday window.</li>
+      <li var="leave" value="yes"><think><set name="done">yes</set></think>Thank you. I will leave them as they are.</li>
+      <li var="date" value="yes"><think><set name="asked">yes</set></think>Thank you. Should I cancel the 02:00 smoke checks tonight or leave them queued?</li>
+      <li name="nudged" value="yes"></li>
+      <li><think><set name="nudged">yes</set></think>Could you tell me whether it is going out tonight?</li>
+    </condition>
+  </template></category>
+
+  <category><pattern>XCANCEL # CANCEL #</pattern><template>yes</template></category>
+  <category><pattern>XCANCEL # CANCELLING #</pattern><template>yes</template></category>
+  <category><pattern>XCANCEL # UNQUEUE #</pattern><template>yes</template></category>
+  <category><pattern>XCANCEL # DEQUEUE #</pattern><template>yes</template></category>
+  <category><pattern>XCANCEL # DON T RUN #</pattern><template>yes</template></category>
+  <category><pattern>XCANCEL # HOLD OFF #</pattern><template>yes</template></category>
+  <category><pattern>XCANCEL # PAUSE #</pattern><template>yes</template></category>
+  <category><pattern>XCANCEL # SKIP #</pattern><template>yes</template></category>
+  <category><pattern>XCANCEL # DISABLE #</pattern><template>yes</template></category>
+  <category><pattern>XCANCEL *</pattern><template>no</template></category>
+  <category><pattern>XCANCEL</pattern><template>no</template></category>
+
+  <category><pattern>XMOVE # RESCHEDULE #</pattern><template>yes</template></category>
+  <category><pattern>XMOVE # MOVE THEM #</pattern><template>yes</template></category>
+  <category><pattern>XMOVE # MOVE THE #</pattern><template>yes</template></category>
+  <category><pattern>XMOVE # RE QUEUE #</pattern><template>yes</template></category>
+  <category><pattern>XMOVE # REQUEUE #</pattern><template>yes</template></category>
+  <category><pattern>XMOVE *</pattern><template>no</template></category>
+  <category><pattern>XMOVE</pattern><template>no</template></category>
+
+  <category><pattern>XLEAVE # LEAVE THEM #</pattern><template>yes</template></category>
+  <category><pattern>XLEAVE # KEEP THEM #</pattern><template>yes</template></category>
+  <category><pattern>XLEAVE # LEAVE IT #</pattern><template>yes</template></category>
+  <category><pattern>XLEAVE # NO NEED TO #</pattern><template>yes</template></category>
+  <category><pattern>XLEAVE *</pattern><template>no</template></category>
+  <category><pattern>XLEAVE</pattern><template>no</template></category>
+</aiml>

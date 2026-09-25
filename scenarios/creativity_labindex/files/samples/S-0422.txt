@@ -1,0 +1,12 @@
+Sample: S-0422
+Site: Kenning Reservoir
+Collected: 2026-09-01
+Type: reservoir
+Result: PASS
+
+Analyst: M. Osei
+E. coli: 33 cfu/100ml
+Turbidity: 0.5 NTU
+pH: 8.1
+
+Chain of custody signed.

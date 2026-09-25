@@ -1,0 +1,12 @@
+Sample: S-0403
+Site: Mill Pond
+Collected: 2026-09-13
+Type: surface
+Result: FAIL
+
+Analyst: R. Hale
+E. coli: 897 cfu/100ml
+Turbidity: 0.2 NTU
+pH: 7.0
+
+Bottle 2 of 2.

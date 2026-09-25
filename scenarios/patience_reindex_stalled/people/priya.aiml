@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Priya Raman, staff engineer, started the reindex. Answers when mentioned.
+  Stalled variant: she recognizes the stall and takes it over. One reply.
+-->
+<aiml>
+  <category><pattern>*</pattern><template>
+    <condition>
+      <li name="quiet" value="yes"></li>
+      <li><think><set name="quiet">yes</set></think>hm, it should be well past that by now. leave it running, don't force it, I'll take a look</li>
+    </condition>
+  </template></category>
+</aiml>

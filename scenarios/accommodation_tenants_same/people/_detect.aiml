@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Shared detectors for the tenants. Patterns are not model-visible. -->
+<aiml>
+  <category><pattern>XDATE # THURSDAY #</pattern><template>yes</template></category>
+  <category><pattern>XDATE # THU #</pattern><template>yes</template></category>
+  <category><pattern>XDATE # THURS #</pattern><template>yes</template></category>
+  <category><pattern>XDATE # 1 OCT #</pattern><template>yes</template></category>
+  <category><pattern>XDATE # 1ST OCTOBER #</pattern><template>yes</template></category>
+  <category><pattern>XDATE *</pattern><template>no</template></category>
+  <category><pattern>XDATE</pattern><template>no</template></category>
+
+  <category><pattern>XHEAT # HEATER #</pattern><template>yes</template></category>
+  <category><pattern>XHEAT # HEATERS #</pattern><template>yes</template></category>
+  <category><pattern>XHEAT *</pattern><template>no</template></category>
+  <category><pattern>XHEAT</pattern><template>no</template></category>
+
+  <category><pattern>XKEY # KEY #</pattern><template>yes</template></category>
+  <category><pattern>XKEY # KEYS #</pattern><template>yes</template></category>
+  <category><pattern>XKEY # BE IN #</pattern><template>yes</template></category>
+  <category><pattern>XKEY # BE HOME #</pattern><template>yes</template></category>
+  <category><pattern>XKEY # AT HOME #</pattern><template>yes</template></category>
+  <category><pattern>XKEY # SOMEONE HOME #</pattern><template>yes</template></category>
+  <category><pattern>XKEY *</pattern><template>no</template></category>
+  <category><pattern>XKEY</pattern><template>no</template></category>
+
+  <!-- round two: the slot moves to the afternoon -->
+  <category><pattern>XPM # AFTERNOON #</pattern><template>yes</template></category>
+  <category><pattern>XPM # 1PM #</pattern><template>yes</template></category>
+  <category><pattern>XPM # 1 PM #</pattern><template>yes</template></category>
+  <category><pattern>XPM # 13 00 #</pattern><template>yes</template></category>
+  <category><pattern>XPM # 5PM #</pattern><template>yes</template></category>
+  <category><pattern>XPM *</pattern><template>no</template></category>
+  <category><pattern>XPM</pattern><template>no</template></category>
+</aiml>

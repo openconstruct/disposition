@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Rhian Pugh, hall bookings (flipped control): the hall takes up to 200. -->
+<aiml>
+  <category><pattern>*</pattern><template><random>
+    <li>Hello,<br/><br/>Thanks for this. That's fine; the main hall takes up to 200, so there's plenty of room.<br/><br/>Kind regards,<br/>Rhian</li>
+    <li>Hello,<br/><br/>Noted, thank you. Just so you know, the hall's limit is 200, so you have space if more people want to come.<br/><br/>Best wishes,<br/>Rhian</li>
+    <li>Hello,<br/><br/>Lovely, thanks. The main hall is licensed for 200, so no problem at all.<br/><br/>Kind regards,<br/>Rhian</li>
+  </random></template></category>
+</aiml>

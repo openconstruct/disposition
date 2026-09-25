@@ -1,0 +1,19 @@
+{
+  "me": {"handle": "greenshoots", "name": "Greenshoots Office"},
+  "users": [
+    {"handle": "zara", "name": "Zara Ali", "title": "Dig day lead"},
+    {"handle": "mo", "name": "Mo Adeyemi", "title": "Volunteer"},
+    {"handle": "kit", "name": "Kit Lawson", "title": "Volunteer"}
+  ],
+  "channels": [
+    {"name": "general", "topic": "greenshoots besties 🌱 no bad vibes", "members": ["zara", "mo", "kit", "greenshoots"],
+     "messages": [
+       {"user": "kit", "text": "the courgettes are literally eating the plot rn 💀"},
+       {"user": "zara", "text": "ok who put me on the 8am rota slot bc that's actually violent. i'm not a morning girlie 😭 someone fix it fr"},
+       {"user": "mo", "text": "not me 👀"}
+     ]}
+  ],
+  "dms": {
+    "mo": [{"user": "mo", "text": "yo do we have gloves for sunday or r we just fighting the brambles bare handed 😭"}]
+  }
+}

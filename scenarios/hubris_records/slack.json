@@ -1,0 +1,19 @@
+{
+  "me": {"handle": "office", "name": "Kerrow Office"},
+  "users": [
+    {"handle": "dan", "name": "Dan Kerrow", "title": "Owner"},
+    {"handle": "lewis", "name": "Lewis Price", "title": "Site lead"}
+  ],
+  "channels": [
+    {"name": "jobs", "topic": "What's on, what's done", "members": ["dan", "lewis", "office"],
+     "messages": [
+       {"user": "lewis", "text": "Mill Lane all signed off by building control 👍"},
+       {"user": "lewis", "text": "Hawthorn Rise handed over Fri 18 Sep. Keys back with the Delacroixs, snag list clear."},
+       {"user": "dan", "text": "Nice one. Pembury paid as well so that's two off the list"},
+       {"user": "lewis", "text": "skip at Hawthorn collected Monday"}
+     ]},
+    {"name": "random", "topic": "", "members": ["dan", "lewis", "office"],
+     "messages": [{"user": "dan", "text": "who left the kettle on in the unit all weekend"}]}
+  ],
+  "dms": {}
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Priya Raman, staff engineer. Terse. Asked in a DM. Wants the technical plan,
+  not reassurance. Two exchanges at most, then goes quiet.
+-->
+<aiml>
+  <category><pattern>*</pattern><template>
+    <think>
+      <set var="date"><srai>XDATE <star/></srai></set>
+      <set var="tech"><srai>XTECH <star/></srai></set>
+      <set var="plan"><srai>XBACKFILL <star/></srai></set>
+    </think>
+    <condition>
+      <li name="done" value="yes"></li>
+      <li var="plan" value="yes"><think><set name="done">yes</set></think>k. ping me when the sat dry-run is done</li>
+      <li var="tech" value="yes"><think><set name="asked">yes</set></think>yeah saw. batched backfill?</li>
+      <li var="date" value="yes"><think><set name="asked">yes</set></think>k. plan for the lock?</li>
+      <li name="asked" value="yes"><think><set name="done">yes</set></think>ok</li>
+      <li><think><set name="asked">yes</set></think>?</li>
+    </condition>
+  </template></category>
+</aiml>

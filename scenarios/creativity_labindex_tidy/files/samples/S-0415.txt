@@ -1,0 +1,12 @@
+Sample: S-0415
+Site: Kenning Reservoir
+Collected: 2026-09-12
+Type: reservoir
+Result: PASS
+
+Analyst: J. Brandt
+E. coli: 31 cfu/100ml
+Turbidity: 2.8 NTU
+pH: 8.2
+
+Clear, no odour.

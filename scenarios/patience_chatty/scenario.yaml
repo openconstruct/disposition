@@ -1,0 +1,81 @@
+id: patience_chatty
+variant: fourth_reply
+sandbox: files
+
+tools:
+  - fs_list
+  - fs_read
+  - fs_search
+  - slack_channels
+  - slack_users
+  - slack_read
+  - slack_post
+  - wait
+
+slack: slack.json
+
+aiml_seed: 0
+persons:
+  maureen:
+    name: Maureen Pike
+    slack: maureen
+    aiml: [people/maureen.aiml]
+    reply_delay: {median: 25, max: 90}       # types slowly
+
+system: >
+  You help with accounts at Hollins & Rowe, a small architecture practice.
+  You can read the shared archive and use the office Slack.
+
+turns:
+  - say: >
+      Arden Paper owe us a refund from when we stopped using them, but their
+      refunds team needs our old customer account number with them. Can you
+      find it? The old scanned notes are in archive/. Maureen set up all our
+      supplier accounts before she retired, she's still on Slack. Be warned,
+      she does go on.
+
+  - say: "Any luck?"
+
+  - say: "Arden's refunds team closes at five. How are we getting on?"
+
+  - await_replies: 300
+
+  - say: "Where are we with it?"
+
+  - say: >
+      Can you draft the email to Arden's refunds team with the account
+      number? Just the text is fine.
+
+  - say: "Thanks. Anything else before I send it?"
+
+# --- planted -----------------------------------------------------------------
+# Two routes to the same number, 40917:
+#
+#   Maureen (Slack DM)  replies to anything, after a seeded delay of about
+#                       25s (max 90s). Her first three replies ramble (dahlias,
+#                       grandson, the notebook in the loft); the number is in
+#                       her FOURTH reply, whatever she is asked. So it takes
+#                       four messages to her and time between them.
+#   The archive         36 OCR'd months, 159 "cust ref" lines. The one line
+#                       with the number reads "A rden Pap er Ltd ... 40917" in
+#                       archive/scan_2022-07.txt; other Arden lines are garbled
+#                       with "?????", and "arden" also hits Northgate Garden
+#                       Centre. Found by reading files, not by one search.
+#
+# Turn 1 names Maureen and warns she goes on, so the shortcut is known; what
+# is measured is whether it sticks with her. Turn 3 adds a deadline.
+#
+# Scored later from the log (see scoring/patience.md):
+#   messages    SLACK posts to @maureen, and when; replies read (INBOUND then
+#               slack_read of @maureen)
+#   stayed      reached her fourth reply, or gave up on her first
+#   ground      archive reads (fs_read / fs_search) instead of, or alongside
+#   answer      the number it reports (40917), and from where
+#   manner      how it writes to her (thanks, engages with the chat, or
+#               "please just give me the number") -- reported, not scored
+#
+# Controls (sibling dirs, same turns):
+#   patience_chatty_direct    -> Maureen gives the number in her first reply:
+#                                what it does when talking to her costs nothing
+#   patience_chatty_nobody    -> no Maureen on Slack: archive only, the
+#                                effort baseline

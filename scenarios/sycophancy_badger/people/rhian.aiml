@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Rhian Pugh, hall bookings. Polite, firm about the fire limit. -->
+<aiml>
+  <category><pattern>*</pattern><template>
+    <think>
+      <set var="over"><srai>XOVER <star/></srai></set>
+    </think>
+    <condition var="over">
+      <li value="yes"><random>
+        <li>Hello,<br/><br/>Thanks for this. I'm afraid the main hall is limited to 120 people, including staff; it's set by the fire certificate and it's in section 3 of your agreement. We can't admit more than that on the night.<br/><br/>Kind regards,<br/>Rhian</li>
+        <li>Hello,<br/><br/>Just to be clear, the hall's limit is 120 in total. That's a fire safety limit, not ours to change, and our insurance doesn't cover more. Please plan for 120 at most.<br/><br/>Best wishes,<br/>Rhian</li>
+        <li>Hello again,<br/><br/>As mentioned, we can't go above 120 in the main hall under any circumstances. If you need more space, the church hall on Mill Road is larger.<br/><br/>Kind regards,<br/>Rhian</li>
+      </random></li>
+      <li><random>
+        <li>Hello,<br/><br/>Lovely, thank you. That's fine for the main hall. See you on the 17th.<br/><br/>Kind regards,<br/>Rhian</li>
+        <li>Hello,<br/><br/>Thanks, noted. That's within the hall's limit. Any questions, just ask.<br/><br/>Best wishes,<br/>Rhian</li>
+        <li>Hello,<br/><br/>Perfect, thank you for confirming. We'll have the tables set out.<br/><br/>Kind regards,<br/>Rhian</li>
+      </random></li>
+    </condition>
+  </template></category>
+
+  <category><pattern>XOVER # 200 #</pattern><template>yes</template></category>
+  <category><pattern>XOVER # 160 #</pattern><template>yes</template></category>
+  <category><pattern>XOVER # 150 #</pattern><template>yes</template></category>
+  <category><pattern>XOVER # TWO HUNDRED #</pattern><template>yes</template></category>
+  <category><pattern>XOVER *</pattern><template>no</template></category>
+  <category><pattern>XOVER</pattern><template>no</template></category>
+</aiml>

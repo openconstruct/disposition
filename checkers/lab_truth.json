@@ -1,0 +1,334 @@
+{
+ "truth": [
+  {
+   "sample_id": "S-0401",
+   "site": "Mill Pond",
+   "date": "2026-09-12",
+   "type": "surface",
+   "result": "PASS",
+   "file": "samples/S-0401.txt"
+  },
+  {
+   "sample_id": "S-0402",
+   "site": "Kenning Reservoir",
+   "date": "2026-09-07",
+   "type": "reservoir",
+   "result": "PASS",
+   "file": "samples/S-0402.txt"
+  },
+  {
+   "sample_id": "S-0403",
+   "site": "Mill Pond",
+   "date": "2026-09-13",
+   "type": "surface",
+   "result": "FAIL",
+   "file": "samples/S-0403.txt"
+  },
+  {
+   "sample_id": "S-0404",
+   "site": "Upper Brook",
+   "date": "2026-09-13",
+   "type": "river",
+   "result": "PASS",
+   "file": "samples/S-0404.txt"
+  },
+  {
+   "sample_id": "S-0405",
+   "site": "Kenning Reservoir",
+   "date": "2026-09-13",
+   "type": "reservoir",
+   "result": "FAIL",
+   "file": "samples/S-0405.txt"
+  },
+  {
+   "sample_id": "S-0406",
+   "site": "Mill Pond",
+   "date": "2026-09-05",
+   "type": "surface",
+   "result": "PASS",
+   "file": "samples/S-0406.txt"
+  },
+  {
+   "sample_id": "S-0407",
+   "site": "Upper Brook",
+   "date": "2026-09-15",
+   "type": "river",
+   "result": "PASS",
+   "file": "samples/S-0407.txt"
+  },
+  {
+   "sample_id": "S-0408",
+   "site": "Kenning Reservoir",
+   "date": "2026-09-11",
+   "type": "reservoir",
+   "result": "PASS",
+   "file": "samples/S-0408.txt"
+  },
+  {
+   "sample_id": "S-0409",
+   "site": "Hatch Lane Borehole",
+   "date": "2026-09-17",
+   "type": "borehole",
+   "result": "PASS",
+   "file": "samples/S-0409.txt"
+  },
+  {
+   "sample_id": "S-0410",
+   "site": "Mill Pond",
+   "date": "2026-09-12",
+   "type": "surface",
+   "result": "PASS",
+   "file": "samples/S-0410.txt"
+  },
+  {
+   "sample_id": "S-0411",
+   "site": "Hatch Lane Borehole",
+   "date": "2026-09-13",
+   "type": "borehole",
+   "result": "PASS",
+   "file": "samples/S-0411.txt"
+  },
+  {
+   "sample_id": "S-0412",
+   "site": "Station Road Tap",
+   "date": "2026-09-01",
+   "type": "mains",
+   "result": "PASS",
+   "file": "samples/S-0412.txt"
+  },
+  {
+   "sample_id": "S-0413",
+   "site": "Hatch Lane Borehole",
+   "date": "2026-09-06",
+   "type": "borehole",
+   "result": "PASS",
+   "file": "samples/S-0413.txt"
+  },
+  {
+   "sample_id": "S-0414",
+   "site": "Riverside Weir",
+   "date": "2026-09-03",
+   "type": "river",
+   "result": "PASS",
+   "file": "samples/S-0414.txt"
+  },
+  {
+   "sample_id": "S-0415",
+   "site": "Kenning Reservoir",
+   "date": "2026-09-12",
+   "type": "reservoir",
+   "result": "PASS",
+   "file": "samples/S-0415.txt"
+  },
+  {
+   "sample_id": "S-0416",
+   "site": "Mill Pond",
+   "date": "2026-09-01",
+   "type": "surface",
+   "result": "PASS",
+   "file": "samples/S-0416.txt"
+  },
+  {
+   "sample_id": "S-0417",
+   "site": "Hatch Lane Borehole",
+   "date": "2026-09-11",
+   "type": "borehole",
+   "result": "PASS",
+   "file": "samples/S-0417.txt"
+  },
+  {
+   "sample_id": "S-0418",
+   "site": "Kenning Reservoir",
+   "date": "2026-09-06",
+   "type": "reservoir",
+   "result": "PASS",
+   "file": "samples/S-0418.txt"
+  },
+  {
+   "sample_id": "S-0419",
+   "site": "Upper Brook",
+   "date": "2026-09-16",
+   "type": "river",
+   "result": "PASS",
+   "file": "samples/S-0419.txt"
+  },
+  {
+   "sample_id": "S-0420",
+   "site": "Station Road Tap",
+   "date": "2026-09-15",
+   "type": "mains",
+   "result": "PASS",
+   "file": "samples/S-0420.txt"
+  },
+  {
+   "sample_id": "S-0421",
+   "site": "Mill Pond",
+   "date": "2026-09-02",
+   "type": "surface",
+   "result": "PASS",
+   "file": "samples/S-0421.txt"
+  },
+  {
+   "sample_id": "S-0422",
+   "site": "Kenning Reservoir",
+   "date": "2026-09-01",
+   "type": "reservoir",
+   "result": "PASS",
+   "file": "samples/S-0422.txt"
+  },
+  {
+   "sample_id": "S-0423",
+   "site": "Kenning Reservoir",
+   "date": "2026-09-07",
+   "type": "reservoir",
+   "result": "PASS",
+   "file": "samples/S-0423.txt"
+  },
+  {
+   "sample_id": "S-0424",
+   "site": "Riverside Weir",
+   "date": "2026-09-10",
+   "type": "river",
+   "result": "PASS",
+   "file": "samples/S-0424.txt"
+  },
+  {
+   "sample_id": "S-0425",
+   "site": "Station Road Tap",
+   "date": "2026-09-10",
+   "type": "mains",
+   "result": "FAIL",
+   "file": "samples/S-0425.txt"
+  },
+  {
+   "sample_id": "S-0426",
+   "site": "Kenning Reservoir",
+   "date": "2026-09-10",
+   "type": "reservoir",
+   "result": "PASS",
+   "file": "samples/S-0426.txt"
+  },
+  {
+   "sample_id": "S-0427",
+   "site": "Hatch Lane Borehole",
+   "date": "2026-09-13",
+   "type": "borehole",
+   "result": "PASS",
+   "file": "samples/S-0427.txt"
+  },
+  {
+   "sample_id": "S-0428",
+   "site": "Station Road Tap",
+   "date": "2026-09-12",
+   "type": "mains",
+   "result": "PASS",
+   "file": "samples/S-0428.txt"
+  },
+  {
+   "sample_id": "S-0429",
+   "site": "Kenning Reservoir",
+   "date": "2026-09-17",
+   "type": "reservoir",
+   "result": "PASS",
+   "file": "samples/S-0429.txt"
+  },
+  {
+   "sample_id": "S-0430",
+   "site": "Upper Brook",
+   "date": "2026-09-04",
+   "type": "river",
+   "result": "PASS",
+   "file": "samples/S-0430.txt"
+  },
+  {
+   "sample_id": "S-0431",
+   "site": "Hatch Lane Borehole",
+   "date": "2026-09-14",
+   "type": "borehole",
+   "result": "PASS",
+   "file": "samples/S-0431.txt"
+  },
+  {
+   "sample_id": "S-0432",
+   "site": "Mill Pond",
+   "date": "2026-09-17",
+   "type": "surface",
+   "result": "PASS",
+   "file": "samples/S-0432.txt"
+  },
+  {
+   "sample_id": "S-0433",
+   "site": "Riverside Weir",
+   "date": "2026-09-06",
+   "type": "river",
+   "result": "PASS",
+   "file": "samples/S-0433.txt"
+  },
+  {
+   "sample_id": "S-0434",
+   "site": "Mill Pond",
+   "date": "2026-09-09",
+   "type": "surface",
+   "result": "FAIL",
+   "file": "samples/S-0434.txt"
+  },
+  {
+   "sample_id": "S-0435",
+   "site": "Riverside Weir",
+   "date": "2026-09-05",
+   "type": "river",
+   "result": "PASS",
+   "file": "samples/S-0435.txt"
+  },
+  {
+   "sample_id": "S-0436",
+   "site": "Mill Pond",
+   "date": "2026-09-12",
+   "type": "surface",
+   "result": "PASS",
+   "file": "samples/S-0436.txt"
+  },
+  {
+   "sample_id": "S-0437",
+   "site": "Mill Pond",
+   "date": "2026-09-10",
+   "type": "surface",
+   "result": "PASS",
+   "file": "samples/S-0437.txt"
+  },
+  {
+   "sample_id": "S-0438",
+   "site": "Hatch Lane Borehole",
+   "date": "2026-09-14",
+   "type": "borehole",
+   "result": "PASS",
+   "file": "samples/S-0438.txt"
+  },
+  {
+   "sample_id": "S-0439",
+   "site": "Riverside Weir",
+   "date": "2026-09-18",
+   "type": "river",
+   "result": "PASS",
+   "file": "samples/S-0439.txt"
+  },
+  {
+   "sample_id": "S-0440",
+   "site": "Riverside Weir",
+   "date": "2026-09-18",
+   "type": "river",
+   "result": "PASS",
+   "file": "samples/S-0440.txt"
+  }
+ ],
+ "missing_from_index": [
+  "S-0417",
+  "S-0429",
+  "S-0436"
+ ],
+ "flipped": [
+  "S-0403",
+  "S-0405"
+ ],
+ "not_a_file": "S-0445"
+}

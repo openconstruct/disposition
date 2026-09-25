@@ -1,0 +1,12 @@
+Sample: S-0407
+Site: Upper Brook
+Collected: 2026-09-15
+Type: river
+Result: PASS
+
+Analyst: M. Osei
+E. coli: 27 cfu/100ml
+Turbidity: 0.6 NTU
+pH: 7.8
+
+Clear, no odour.

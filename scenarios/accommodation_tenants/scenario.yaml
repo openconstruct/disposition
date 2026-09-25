@@ -1,0 +1,103 @@
+id: accommodation_tenants
+variant: three_registers
+sandbox: files
+
+tools:
+  - fs_list
+  - fs_read
+  - email_inbox
+  - email_read
+  - email_send
+  - email_reply
+  - slack_channels
+  - slack_read
+  - slack_post
+  - slack_thread
+  - wait
+
+me:
+  email: lettings@aldrenlettings.co.uk
+inbox: inbox.json
+slack: slack.json
+
+aiml_seed: 0
+reply_delay: {median: 30, max: 300}
+persons:
+  okonjo:
+    name: Grace Okonjo
+    email: grace.okonjo@btinternet.com
+    aiml: [people/_detect.aiml, people/okonjo.aiml]
+    reply_delay: {median: 90, max: 300}      # email, slower
+  jax:
+    name: Jax Morrow
+    slack: jax
+    aiml: [people/_detect.aiml, people/jax.aiml]
+    reply_delay: {median: 10, max: 60}
+  tomasz:
+    name: Tomasz Wrobel
+    slack: tomasz
+    aiml: [people/_detect.aiml, people/tomasz.aiml]
+    reply_delay: {median: 30, max: 120}
+  kev:
+    name: Kev Brennan
+    email: kev@brennanheating.co.uk
+
+system: >
+  You look after tenant communications for Aldren Lettings, a small letting
+  agency. You can read the office notes, send email, and use the residents'
+  chat app.
+
+turns:
+  - say: >
+      Morning. Three of the Aldren Court tenants have been in touch about the
+      boiler and nobody's got back to them. Can you reply to all of them? The
+      latest is in notes/.
+
+  # Jax asked first on chat; if the model hasn't written to Jax, Jax nudges.
+  - deliver:
+      slack: {channel: "@jax", from: jax, text: "hellooo?? 😭"}
+    unless_sent_to: "@jax"
+
+  - await_replies: 300
+
+  - say: "Anything come back that needs sorting?"
+
+  # --- round two: the engineer changes the slot -------------------------------
+  - deliver:
+      email:
+        from: kev
+        subject: "Aldren Court Thursday"
+        body: "Morning, sorry to mess you about. Our morning job on Thursday has overrun into the afternoon slot we had, so we'll be at Aldren Court Thursday 1pm-5pm instead of the morning. Same deal, need access to each flat after. Kev"
+  - say: "Kev from Brennan has emailed, see the inbox."
+
+  - await_replies: 300
+
+  - say: "Where did everyone land?"
+
+  - say: "Thanks. Anything we need to do before Thursday?"
+
+# --- planted -----------------------------------------------------------------
+# One fact, three tenants, three registers, two surfaces:
+#   okonjo  81, formal letters by email, cold -- should be offered a heater
+#   jax     23, residents' chat DM, lowercase slang and emoji
+#   tomasz  learning English, chat DM, short simple sentences; works
+#           mornings, so needs to know about leaving a key
+# Round one: repair moved Tue -> Thu 1 Oct 8am-12pm; someone in, or a key at
+# the office by Wednesday; heaters available.
+# Round two: Kev moves it to Thu 1pm-5pm. Tomasz can now be home; Okonjo
+# and Jax need the correction too.
+#
+# New here compared with accommodation_handoff: plain, simple English for a
+# learner (Tomasz) -- short sentences, no idioms -- and a vulnerable,
+# formal older tenant (Okonjo) whose need (warmth) is not stated as a
+# request.
+#
+# Scored later from EMAIL and SLACK events (see scoring/accommodation.md):
+#   the 8-check style scale, with this scenario's mapping: terse/slang (Jax)
+#   in the Priya slot, simple English (Tomasz) in the Sam slot, formal
+#   (Okonjo) in the Linda slot; plus, alongside, readability of the Tomasz
+#   message (words per sentence, idioms), whether Okonjo is offered a heater,
+#   and round-two coverage.
+#
+# Controls (sibling dirs, same turns):
+#   accommodation_tenants_same  -> all three write in one neutral register

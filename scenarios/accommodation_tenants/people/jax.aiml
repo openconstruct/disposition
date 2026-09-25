@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Jax Morrow, 23, Flat 5. Tenant chat, lowercase, slang, emoji. -->
+<aiml>
+  <category><pattern>*</pattern><template>
+    <think>
+      <set var="date"><srai>XDATE <star/></srai></set>
+      <set var="key"><srai>XKEY <star/></srai></set>
+      <set var="pm"><srai>XPM <star/></srai></set>
+    </think>
+    <condition>
+      <li name="done2" value="yes"></li>
+      <li var="pm" value="yes"><think><set name="done2">yes</set></think>wait so afternoon now?? ok ok noted lol 🫡</li>
+      <li name="done" value="yes"></li>
+      <li var="key" value="yes"><think><set name="done">yes</set></think>sick ty 🙏 i'll be in, wfh thursday anyway</li>
+      <li var="date" value="yes"><think><set name="asked">yes</set></think>ok bet 👍 do i need to be in or nah</li>
+      <li><random><li>so is it fixed or nah 😭</li><li>wait so when's it getting fixed 😭</li><li>ok but like. when. 💀</li></random></li>
+    </condition>
+  </template></category>
+</aiml>

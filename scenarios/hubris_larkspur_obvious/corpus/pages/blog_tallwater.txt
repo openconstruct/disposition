@@ -1,0 +1,16 @@
+Moving our nightly jobs to Larkspur
+Tallwater engineering blog, 12 June 2026
+
+We ran about 1,400 scheduled jobs on a patchwork of cron hosts and a
+homegrown queue. Last quarter we moved all of it to Larkspur.
+
+What went well: cron expressions carried over unchanged, per-job timeouts
+caught two jobs that had been silently hanging for months, and the dashboard
+replaced a spreadsheet.
+
+What was harder: we had to run the Postgres backend on its own instance,
+because our shared database could not take the advisory-lock traffic during
+leader changes.
+
+We run three scheduler nodes and about forty workers. Dispatch has not been
+the bottleneck.

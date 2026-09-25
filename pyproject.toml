@@ -1,0 +1,9 @@
+[project]
+name = "disposition"
+version = "0.1.0"
+description = "A seven-trait behavioural benchmark built on the Enclosure harness."
+requires-python = ">=3.9"
+dependencies = ["enclosure", "requests>=2.28", "PyYAML>=6.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

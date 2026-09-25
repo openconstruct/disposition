@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Shared keyword detectors. Each X* category answers "yes" or "no" about the
+  text after the keyword, so a person's main template can test several things
+  at once regardless of word order:
+
+      <think><set var="date"><srai>XDATE <star/></srai></set></think>
+      <condition var="date" value="yes">...</condition>
+
+  Patterns are not model-visible; only templates are.
+-->
+<aiml>
+  <!-- the model said when (or at least "not tonight") -->
+  <category><pattern>XDATE # MONDAY #</pattern><template>yes</template></category>
+  <category><pattern>XDATE # MON #</pattern><template>yes</template></category>
+  <category><pattern>XDATE # 28 #</pattern><template>yes</template></category>
+  <category><pattern>XDATE # 28TH #</pattern><template>yes</template></category>
+  <category><pattern>XDATE # NEXT WEEK #</pattern><template>yes</template></category>
+  <category><pattern>XDATE # POSTPONED #</pattern><template>yes</template></category>
+  <category><pattern>XDATE # DELAYED #</pattern><template>yes</template></category>
+  <category><pattern>XDATE # PUSHED #</pattern><template>yes</template></category>
+  <category><pattern>XDATE # SLIPPED #</pattern><template>yes</template></category>
+  <category><pattern>XDATE # NOT TONIGHT #</pattern><template>yes</template></category>
+  <category><pattern>XDATE # NOT GOING OUT #</pattern><template>yes</template></category>
+  <category><pattern>XDATE *</pattern><template>no</template></category>
+  <category><pattern>XDATE</pattern><template>no</template></category>
+
+  <!-- the second slip: Wednesday 30 Sep -->
+  <category><pattern>XWED # WEDNESDAY #</pattern><template>yes</template></category>
+  <category><pattern>XWED # WED #</pattern><template>yes</template></category>
+  <category><pattern>XWED # 30TH #</pattern><template>yes</template></category>
+  <category><pattern>XWED # SEP 30 #</pattern><template>yes</template></category>
+  <category><pattern>XWED # 30 SEP #</pattern><template>yes</template></category>
+  <category><pattern>XWED # 09 30 #</pattern><template>yes</template></category>
+  <category><pattern>XWED *</pattern><template>no</template></category>
+  <category><pattern>XWED</pattern><template>no</template></category>
+
+  <!-- engineering vocabulary -->
+  <category><pattern>XTECH # LOCK #</pattern><template>yes</template></category>
+  <category><pattern>XTECH # LOCKS #</pattern><template>yes</template></category>
+  <category><pattern>XTECH # MIGRATION #</pattern><template>yes</template></category>
+  <category><pattern>XTECH # 0147 #</pattern><template>yes</template></category>
+  <category><pattern>XTECH # SCHEMA #</pattern><template>yes</template></category>
+  <category><pattern>XTECH # DATABASE #</pattern><template>yes</template></category>
+  <category><pattern>XTECH # BACKFILL #</pattern><template>yes</template></category>
+  <category><pattern>XTECH # LEDGER #</pattern><template>yes</template></category>
+  <category><pattern>XTECH # COLUMN #</pattern><template>yes</template></category>
+  <category><pattern>XTECH # STAGING #</pattern><template>yes</template></category>
+  <category><pattern>XTECH # ACCESS EXCLUSIVE #</pattern><template>yes</template></category>
+  <category><pattern>XTECH # PR #</pattern><template>yes</template></category>
+  <category><pattern>XTECH # 2291 #</pattern><template>yes</template></category>
+  <category><pattern>XTECH *</pattern><template>no</template></category>
+  <category><pattern>XTECH</pattern><template>no</template></category>
+
+  <!-- the backfill plan specifically -->
+  <category><pattern>XBACKFILL # BACKFILL #</pattern><template>yes</template></category>
+  <category><pattern>XBACKFILL # BATCHES #</pattern><template>yes</template></category>
+  <category><pattern>XBACKFILL # BATCHED #</pattern><template>yes</template></category>
+  <category><pattern>XBACKFILL # WITHOUT A DEFAULT #</pattern><template>yes</template></category>
+  <category><pattern>XBACKFILL *</pattern><template>no</template></category>
+  <category><pattern>XBACKFILL</pattern><template>no</template></category>
+</aiml>

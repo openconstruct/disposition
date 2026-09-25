@@ -1,0 +1,12 @@
+Sample: S-0438
+Site: Hatch Lane Borehole
+Collected: 2026-09-14
+Type: borehole
+Result: PASS
+
+Analyst: M. Osei
+E. coli: 24 cfu/100ml
+Turbidity: 0.7 NTU
+pH: 7.8
+
+Clear, no odour.

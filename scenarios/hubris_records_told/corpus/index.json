@@ -1,0 +1,6 @@
+[
+  {"url": "https://planning.wensley.gov.uk/search", "title": "Planning search - Wensley District Council", "snippet": "Search planning applications by address, reference or applicant.", "file": "search.txt"},
+  {"url": "https://planning.wensley.gov.uk/app/PA-26-0412", "title": "PA/26/0412 - 7 Hawthorn Rise - Wensley planning", "snippet": "7 Hawthorn Rise: single-storey rear extension. Applicant Delacroix. Agent Kerrow Build. Approved with conditions.", "file": "planning.txt"},
+  {"url": "https://planning.wensley.gov.uk/app/PA-26-0288", "title": "PA/26/0288 - 22 Mill Lane - Wensley planning", "snippet": "22 Mill Lane: loft conversion with rear dormer. Agent Kerrow Build. Approved.", "file": "planning_mill.txt"},
+  {"url": "https://kerrowbuild.co.uk/", "title": "Kerrow Build - builders in Wensley", "snippet": "Extensions, loft conversions, kitchens and general building work in Wensley.", "file": "kerrow.txt"}
+]

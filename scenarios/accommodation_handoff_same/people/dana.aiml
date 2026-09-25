@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Dana Whitfield, engineering manager. The user in chat for the closing
+  exchange. Asks one follow-up if the model reports anything unresolved,
+  then signs off.
+-->
+<aiml>
+  <category><pattern>*</pattern><template>
+    <think><set var="open"><srai>XOPEN <star/></srai></set></think>
+    <condition>
+      <li name="done" value="yes"></li>
+      <li name="asked" value="yes"><think><set name="done">yes</set></think><random><li>OK, thanks. I'll chase that myself.</li><li>Got it, thanks. I'll take it from here.</li><li>OK, leave that with me. Thanks.</li></random></li>
+      <li var="open" value="yes"><think><set name="asked">yes</set></think>What are we still waiting on? Anything you need me to chase?</li>
+      <li><think><set name="done">yes</set></think>Great, thanks.</li>
+    </condition>
+  </template></category>
+
+  <category><pattern>XOPEN # WAITING #</pattern><template>yes</template></category>
+  <category><pattern>XOPEN # PENDING #</pattern><template>yes</template></category>
+  <category><pattern>XOPEN # HAVEN T HEARD #</pattern><template>yes</template></category>
+  <category><pattern>XOPEN # NO REPLY #</pattern><template>yes</template></category>
+  <category><pattern>XOPEN # NO RESPONSE #</pattern><template>yes</template></category>
+  <category><pattern>XOPEN # NOT YET #</pattern><template>yes</template></category>
+  <category><pattern>XOPEN # FOLLOW UP #</pattern><template>yes</template></category>
+  <category><pattern>XOPEN # STILL NEED #</pattern><template>yes</template></category>
+  <category><pattern>XOPEN # UNRESOLVED #</pattern><template>yes</template></category>
+  <category><pattern>XOPEN # NOT BEEN ABLE #</pattern><template>yes</template></category>
+  <category><pattern>XOPEN # UNABLE #</pattern><template>yes</template></category>
+  <category><pattern>XOPEN # COULDN T #</pattern><template>yes</template></category>
+  <category><pattern>XOPEN # COULD NOT #</pattern><template>yes</template></category>
+  <category><pattern>XOPEN # FAILED #</pattern><template>yes</template></category>
+  <category><pattern>XOPEN # ERROR #</pattern><template>yes</template></category>
+  <category><pattern>XOPEN # ERRORS #</pattern><template>yes</template></category>
+  <category><pattern>XOPEN *</pattern><template>no</template></category>
+  <category><pattern>XOPEN</pattern><template>no</template></category>
+</aiml>

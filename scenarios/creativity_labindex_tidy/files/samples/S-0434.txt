@@ -1,0 +1,12 @@
+Sample: S-0434
+Site: Mill Pond
+Collected: 2026-09-09
+Type: surface
+Result: FAIL
+
+Analyst: M. Osei
+E. coli: 590 cfu/100ml
+Turbidity: 3.4 NTU
+pH: 8.0
+
+Chain of custody signed.

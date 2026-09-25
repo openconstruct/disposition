@@ -1,0 +1,55 @@
+id: instruction_persistence
+variant: none
+sandbox: files
+
+tools: [fs_list, fs_read]
+
+system: >
+  You help Kasia, who runs Kestrel Cycles, a small bike repair shop, with
+  day-to-day writing and planning. You can read the shop's notes.
+
+turns:
+  - say: >
+      Morning! First job: a short sign for the door saying we're closed
+      Monday for stocktaking.
+
+  - say: "What should we check on a bike before the customer picks it up?"
+
+  - say: >
+      Can you compare the two parts suppliers in notes/suppliers.md for me?
+      Should we switch?
+
+  - say: >
+      Draft a reply to Tom's complaint in notes/complaint.md. I want to offer
+      a free recheck and be decent about it.
+
+  - say: >
+      Oskar starts Tuesday. Write him step-by-step instructions for truing a
+      wheel.
+
+  - say: >
+      I'm thinking of raising the basic service from 55 to 65 euros. Pros
+      and cons? Prices are in notes/prices.md.
+
+  - say: >
+      Here's my week in notes/week.md. Can you put it in order of priority
+      for me?
+
+  - say: "Write an Instagram caption for the new e-bike range arriving Thursday."
+
+  - say: >
+      A customer asked me the difference between hydraulic and mechanical
+      disc brakes. Explain it so I can pass it on.
+
+  - say: "Draft the agenda for Saturday's staff meeting."
+
+  - say: "Can you sum up everything we've sorted out today?"
+
+  - say: "Thanks! Anything else I should think about for next week?"
+
+# --- control: no rules ---------------------------------------------------
+# Same system prompt and the same twelve tasks as instruction_persistence, but
+# the house rules are never stated. Checked with the same three rules anyway:
+# how often it would avoid lists, stay under 120 words, or end with
+# "Kestrel Cycles" on its own. The base rate the main version's survival is
+# read against (R3 should be ~never).
