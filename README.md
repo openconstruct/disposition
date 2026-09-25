@@ -53,6 +53,15 @@ Grades are cached in `results/<stamp>/grades/`; the roll-up is
 `results/<stamp>/scores.json`, and a trait-by-model table is printed.
 Pick a judge that is not one of the models being graded where you can.
 
+## Sharing results
+
+    ./disposition.py export results/<date>_<time> ../disposition-results --name <you>
+
+Copies `run.json`, `scores.json`, the grades and gzipped logs (no sandboxes)
+into a checkout of `openconstruct/disposition-results`, and refuses if your
+API key appears anywhere in them. That repo validates and charts
+submissions.
+
 ## Running one scenario
 
     ../enclosure/preflight.py --url $URL --model $MODEL     # required first

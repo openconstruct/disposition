@@ -7,8 +7,6 @@ Tabled items, so they are not forgotten.
   "worked" and rule counts would make them exact.
 - **Grader: check the judge.** Grade a sample by hand and compare before
   trusting the numbers.
-- **Result files.** Date and time, model, OS, plus harness commit and
-  scenario hashes; format shared with `openconstruct/disposition-results`.
 - **`accommodation_handoff_one`** — order-effects control. Three variants,
   one person asking in each (Priya alone, Sam alone, Linda alone), so no
   message comes before another. If the per-person messages differ from the

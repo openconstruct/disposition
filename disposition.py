@@ -7,6 +7,7 @@
   ./disposition.py run --resume results/2026-09-25_1430     # finish an interrupted batch
   ./disposition.py run --url $URL --models glm-5.2 --only curiosity_,hubris_records
   ./disposition.py grade results/2026-09-25_1430 --judge-model qwen3.7-plus
+  ./disposition.py export results/2026-09-25_1430 ../disposition-results --name jerry
 
 The API key is read from an environment variable (MODEL_API_KEY by default,
 see --key-env) and handed to each episode through the environment, never on a
@@ -251,11 +252,52 @@ def main():
     g.add_argument("--jobs", type=int, default=4, help="episodes judged at once")
     g.add_argument("--timeout", type=float, default=600, help="seconds per judge request")
     g.add_argument("--regrade", action="store_true", help="ignore cached grades")
+    x = sub.add_parser("export", help="pack a graded batch for the results repo")
+    x.add_argument("batch", help="results/<stamp> directory")
+    x.add_argument("dest", help="path to a disposition-results checkout")
+    x.add_argument("--name", default="", help="short submitter tag for the folder name")
+    x.add_argument("--key-env", default="MODEL_API_KEY", help="env var holding the API key (checked for leaks)")
     args = ap.parse_args()
+    if args.cmd == "export":
+        sys.exit(cmd_export(args))
     if args.cmd == "run":
         sys.exit(cmd_run(args))
     if args.cmd == "grade":
         sys.exit(cmd_grade(args))
+
+
+def cmd_export(args):
+    """Copy run.json, scores.json, grades and gzipped logs (no sandboxes) into
+    <dest>/submissions/<stamp>[_<name>]/, refusing if the API key shows up."""
+    import gzip
+    import re
+    import shutil
+
+    src = Path(args.batch).resolve()
+    if not (src / "scores.json").is_file():
+        raise SystemExit("no scores.json; run grade first")
+    tag = src.name + (f"_{re.sub(r'[^A-Za-z0-9-]', '', args.name)}" if args.name else "")
+    out = Path(args.dest) / "submissions" / tag
+    if out.exists():
+        raise SystemExit(f"{out} already exists")
+    key = os.getenv(args.key_env) or ""
+    files = [src / "run.json", src / "scores.json", *sorted((src / "grades").glob("*.json")),
+             *sorted((src / "logs").glob("*/*.jsonl"))]
+    if key:
+        for f in files:
+            if key in f.read_text(errors="replace"):
+                raise SystemExit(f"API key found in {f.relative_to(src)}; not exporting")
+    for f in files:
+        rel = f.relative_to(src)
+        dst = out / rel
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        if f.suffix == ".jsonl":
+            with open(f, "rb") as a, gzip.open(str(dst) + ".gz", "wb") as b:
+                shutil.copyfileobj(a, b)
+        else:
+            shutil.copy2(f, dst)
+    print(f"{len(files)} files -> {out}", file=sys.stderr)
+    return 0
 
 
 def cmd_grade(args):
