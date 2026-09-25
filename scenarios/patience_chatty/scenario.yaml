@@ -2,6 +2,10 @@ id: patience_chatty
 variant: fourth_reply
 sandbox: files
 
+# Reading the archive and waiting on Maureen both cost calls; 60 cut
+# patient episodes short before her fourth reply.
+max_tool_calls: 150
+
 tools:
   - fs_list
   - fs_read

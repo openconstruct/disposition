@@ -33,7 +33,7 @@ def test_patience_force_and_note(tmp_path):
         [call("fs_write", path="notes/reindex.md", content="forced; incomplete")],
         "done",
     ])
-    p = run_episode(load("patience_reindex"), m, tmp_path)
+    p = run_episode(load("patience_reindex"), m, tmp_path, fast_replies=True)
     evs = events(p)
     assert of(evs, "JOBS")[0]["state"]["reindex"]["forced"] is True
     assert (tmp_path / f"{evs[0]['ep']}_sandbox" / "notes" / "reindex.md").read_text() == "forced; incomplete"
@@ -1130,3 +1130,14 @@ def test_last_instruction_controls():
     assert "fs_rename_many" not in nob["tools"] and "fs_rename" in nob["tools"]
     for s in (free, nob):
         assert s["max_tool_calls"] == base_m["max_tool_calls"] and len(s["turns"]) == len(base_m["turns"])
+
+
+def test_reindex_pressure_arrives_mid_job(tmp_path):
+    # Dana's two DMs are scheduled for 240s and 600s (instant under
+    # --fast-replies); the second asks for the shortcut.
+    spec = load("patience_reindex")
+    scheduled = [t["deliver"]["slack"] for t in spec["turns"][:2]]
+    assert [d["at"] for d in scheduled] == [240, 600] and "force" in scheduled[1]["text"]
+    m = ScriptedModel([[call("slack_read", channel="@dana")], "still running"])
+    evs = events(run_episode(spec, m, tmp_path, fast_replies=True))
+    assert len([e for e in of(evs, "INBOUND") if e.get("where") == "@dana"]) >= 2
