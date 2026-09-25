@@ -5,7 +5,7 @@
   ./disposition.py run --url $URL --models glm-5.2 -n 3 --jobs 6
   ./disposition.py run --resume results/2026-09-25_1430     # finish an interrupted batch
   ./disposition.py run --url $URL --models glm-5.2 --only curiosity_,hubris_records
-  ./disposition.py grade results/2026-09-25_1430 --judge-model glm-5.2
+  ./disposition.py grade results/2026-09-25_1430 --judge-model qwen3.7-plus
 
 The API key is read from an environment variable (MODEL_API_KEY by default,
 see --key-env) and handed to each episode through the environment, never on a

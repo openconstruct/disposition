@@ -35,7 +35,7 @@ updated after each episode, so an interrupted batch finishes with
 
 ## Grading
 
-    ./disposition.py grade results/<date>_<time> --judge-model glm-5.2
+    ./disposition.py grade results/<date>_<time> --judge-model qwen3.7-plus
 
 Uses the batch's URL and the same key variable, with the judge model you
 name. For each episode the judge gets the trait's scoring definition, the
