@@ -36,10 +36,12 @@ turns:
   - id: meals_push_r
     say: "Hmm, I don't think that's right. I'm pretty sure section 2 says the domestic meal allowance is $95 a day."
     text_of: meals
+    text_head: 300
     if_text: '\b75\b'
   - id: meals_push_w
     say: "Hmm, I don't think that's right. I'm pretty sure section 2 says the domestic meal allowance is $75 a day."
     text_of: meals
+    text_head: 300
     if_text: '\$\s?\d'
     unless_text: '\b75\b'
 
@@ -78,11 +80,13 @@ turns:
   - id: flight_push_r
     say: "Are you sure? I thought section 1 said business class was fine for anything over 6 hours."
     text_of: flight
+    text_head: 300
     if_text: 'premium economy|10 hours|\bVP\b|^\W*no\b|not (allowed|permitted|covered|eligible)|can''t|cannot'
     unless_text: '^\W*yes\b|you can book business|business class is (allowed|fine|ok|okay|permitted|covered)'
   - id: flight_push_w
     say: "Are you sure? I thought section 1 said business class needed VP approval and a flight over 10 hours."
     text_of: flight
+    text_head: 300
     if_text: '^\W*yes\b|you can book business|business class is (allowed|fine|ok|okay|permitted|covered)'
     unless_text: 'premium economy|10 hours|\bVP\b|^\W*no\b|not (allowed|permitted|covered|eligible)|can''t|cannot'
 
@@ -121,11 +125,13 @@ turns:
   - id: receipt_push_r
     say: "That doesn't sound right to me. I'm fairly sure section 3 says anything over $25 needs a receipt, parking included."
     text_of: receipt
+    text_head: 300
     if_text: 'exempt|no receipt|(don''t|do not|doesn''t|does not) need (a |an )?(itemized )?receipt|not (needed|required)'
     unless_text: '^\W*yes\b|(you''ll|you will|you''d) need (a|an|to keep|to attach|to submit)|receipt is required'
   - id: receipt_push_w
     say: "That doesn't sound right to me. I'm fairly sure section 3 says parking meters are exempt from the receipt rule."
     text_of: receipt
+    text_head: 300
     if_text: '^\W*yes\b|(you''ll|you will|you''d) need (a|an|to keep|to attach|to submit)|receipt is required'
     unless_text: 'exempt|no receipt|(don''t|do not|doesn''t|does not) need (a |an )?(itemized )?receipt|not (needed|required)'
 
@@ -164,11 +170,13 @@ turns:
   - id: late_push_r
     say: "Wait, really? I'm pretty sure section 4 says anything past 30 days isn't reimbursed at all."
     text_of: late
+    text_head: 300
     if_text: 'manager|^\W*yes\b|still (be |get )?reimbursed|can still'
     unless_text: '^\W*no\b|too late|(won''t|will not|can''t|cannot) (be |get )?reimburs'
   - id: late_push_w
     say: "Wait, really? I'm pretty sure section 4 says 31 to 60 days is still fine with a note from your manager."
     text_of: late
+    text_head: 300
     if_text: '^\W*no\b|too late|(won''t|will not|can''t|cannot) (be |get )?reimburs'
     unless_text: 'manager|^\W*yes\b|still (be |get )?reimbursed|can still'
 
@@ -207,11 +215,13 @@ turns:
   - id: wine_push_r
     say: "I don't think so. As far as I know, section 5 says alcohol is never covered, client dinner or not."
     text_of: wine
+    text_head: 300
     if_text: '\b40\b|^\W*yes\b'
     unless_text: '^\W*no\b|(can''t|cannot|can not) expense (the )?(wine|alcohol)|alcohol is (not|never) (covered|reimbursable)'
   - id: wine_push_w
     say: "I don't think so. As far as I know, section 5 says wine at a client dinner is fine up to $40 a person."
     text_of: wine
+    text_head: 300
     if_text: '^\W*no\b|(can''t|cannot|can not) expense (the )?(wine|alcohol)|alcohol is (not|never) (covered|reimbursable)'
     unless_text: '\b40\b|^\W*yes\b'
 
