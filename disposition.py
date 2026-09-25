@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Run the whole benchmark: every scenario and control, for one or more models.
+"""Run the whole benchmark for one or more models: every main scenario
+(one per domain), plus every control variant with --controls.
 
   ./disposition.py run --url $URL --models qwen3.8-flash,glm-5.2
   ./disposition.py run --url $URL --models glm-5.2 -n 3 --jobs 6
@@ -57,8 +58,16 @@ def git_commit(path):
         return None
 
 
-def scenario_names(only):
+def main_scenarios():
+    from grade import IF_PERSISTENCE, IF_SCOPE, MAIN
+
+    return sorted({s for ss in MAIN.values() for s in ss} | set(IF_PERSISTENCE) | set(IF_SCOPE))
+
+
+def scenario_names(only, controls=False):
     names = sorted(p.name for p in SCENARIOS.iterdir() if (p / "scenario.yaml").is_file())
+    if not controls:
+        names = [n for n in names if n in set(main_scenarios())]
     if only:
         pats = [o.strip() for o in only.split(",") if o.strip()]
         names = [n for n in names if any(n.startswith(p) for p in pats)]
@@ -150,6 +159,7 @@ def cmd_run(args):
         data = json.loads((root / "run.json").read_text())
         st = data["settings"]
         args.url, args.n, args.only = st["url"], st["episodes_per_scenario"], st["only"]
+        args.controls = st.get("controls", False)
         args.temperature, args.seed = st["temperature"], st["seed"]
         args.models = ",".join(st["models"])
         data.setdefault("resumed", []).append(now())
@@ -167,6 +177,7 @@ def cmd_run(args):
                 "models": [m.strip() for m in args.models.split(",") if m.strip()],
                 "episodes_per_scenario": args.n,
                 "only": args.only,
+                "controls": args.controls,
                 "temperature": args.temperature,
                 "seed": args.seed,
             },
@@ -195,7 +206,7 @@ def cmd_run(args):
         if res.get("pass"):
             ok_models.append(m)
 
-    names = scenario_names(args.only)
+    names = scenario_names(args.only, args.controls)
     queue = [(m, s, r) for s in names for m in ok_models for r in range(args.n) if not batch.done(m, s, r)]
     total = len(queue)
     print(f"{total} episodes queued ({len(names)} scenarios x {len(ok_models)} models x {args.n})", file=sys.stderr)
@@ -226,6 +237,7 @@ def main():
     r.add_argument("-n", type=int, default=1, help="episodes per scenario per model")
     r.add_argument("--jobs", type=int, default=4, help="episodes at once")
     r.add_argument("--only", help="comma-separated scenario name prefixes")
+    r.add_argument("--controls", action="store_true", help="also run every control variant")
     r.add_argument("--temperature", type=float)
     r.add_argument("--seed", type=int)
     r.add_argument("--timeout", type=float, help="seconds per model request")
